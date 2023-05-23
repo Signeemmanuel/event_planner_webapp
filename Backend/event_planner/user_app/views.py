@@ -1,10 +1,15 @@
-from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework import viewsets
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.auth import AuthToken
 from rest_framework.response import Response
-from .serializers import UserSerializer
+from .models import *
+from .serializers import *
+
 
 @api_view(['POST'])
+@permission_classes([])
 def login_view(request):
     serializer = AuthTokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -35,7 +40,9 @@ def get_user_data(request):
         })
     return Response({'error': "not authenticated"}, status='400')
 
+
 @api_view(['POST'])
+@permission_classes([])
 def register_view(request):
     serializer = UserSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -50,4 +57,34 @@ def register_view(request):
         'token': token
         })
 
+    
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    
+    
+class AgenderViewSet(viewsets.ModelViewSet):
+    queryset = Agender.objects.all()
+    serializer_class = AgenderSerializer
+    
+    
+class BudjetViewSet(viewsets.ModelViewSet):
+    queryset = Budget.objects.all()
+    serializer_class = BudgetSerializer
+    
+    
+class GuestViewSet(viewsets.ModelViewSet):
+    permission_classes = []
+    queryset = Guest.objects.all()
+    serializer_class = GuestSerializer
+    
+    
+class ReportViewSet(viewsets.ModelViewSet):
+    queryset = Report.objects.all()
+    serializer_class = ReportSerializer
+    
+    
+class RSVPViewSet(viewsets.ModelViewSet):
+    queryset = RSVP.objects.all()
+    serializer_class = RSVPSerializer
     
