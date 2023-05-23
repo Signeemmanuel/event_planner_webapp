@@ -1,5 +1,6 @@
 from rest_framework import serializers, validators
-from .models import User
+from .models import User, Event, Agender, Budget, Guest, Report, RSVP
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,3 +37,37 @@ class UserSerializer(serializers.ModelSerializer):
         )
         
         return user
+        
+
+class AgenderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Agender
+        fields = '__all__'
+    
+    
+class BudgetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Budget
+        fields = "__all__"
+
+class RSVPSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RSVP
+        fields = "__all__"
+
+class GuestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Guest
+        fields = "__all__"
+        
+
+class ReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Report
+        fields = "__all__"
+        
+        
+class EventSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Event
+        fields = "__all__"
