@@ -51,7 +51,7 @@ class Event(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
     budget = models.ForeignKey(Budget, on_delete=models.SET_NULL, blank=False, null=True)
     report_id = models.ForeignKey(Report, on_delete=models.SET_NULL, blank=False, null=True)
-    agender_id = models.ForeignKey(Agender, on_delete=models.SET_NULL, blank=False, null=True)
+    agender_id = models.ForeignKey(Agenda, on_delete=models.SET_NULL, blank=False, null=True)
     def __str__(self):
         return self.name
 

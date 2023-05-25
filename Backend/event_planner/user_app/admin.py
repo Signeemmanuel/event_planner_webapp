@@ -5,7 +5,7 @@ from .models import *
 admin.site.register(User)
 admin.site.register(Event)
 admin.site.register(Budget)
-admin.site.register(Agender)
+admin.site.register(Agenda)
 admin.site.register(Guest)
 admin.site.register(Report)
 admin.site.register(RSVP)
