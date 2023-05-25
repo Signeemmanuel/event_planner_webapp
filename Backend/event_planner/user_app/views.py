@@ -4,6 +4,7 @@ from rest_framework import viewsets
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.auth import AuthToken
 from rest_framework.response import Response
+from django.contrib.auth.hashers import make_password
 from .models import *
 from .serializers import *
 
@@ -46,7 +47,8 @@ def get_user_data(request):
 def register_view(request):
     serializer = UserSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
-    user = serializer.save()
+    password = make_password(serializer.validated_data['password'])
+    user = serializer.save(password=password)
     _, token = AuthToken.objects.create(user)
     return Response({
         'user_info': {
@@ -87,4 +89,18 @@ class ReportViewSet(viewsets.ModelViewSet):
 class RSVPViewSet(viewsets.ModelViewSet):
     queryset = RSVP.objects.all()
     serializer_class = RSVPSerializer
+
+
+class InvitationViewSet(viewsets.ModelViewSet):
+    queryset = Invitation.objects.all()
+    serializer_class = InvitationSerializer
     
+    def create(self, request):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        invitation = serializer.save()
+        
+        #Send email to invitated user
+        #send_invitation_email(invitation)  
+        
+        return Response(serializer.data, status=201)

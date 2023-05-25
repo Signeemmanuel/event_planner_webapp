@@ -1,5 +1,5 @@
 from rest_framework import serializers, validators
-from .models import User, Event, Agender, Budget, Guest, Report, RSVP
+from .models import *
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -71,3 +71,9 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = "__all__"
+        
+
+class InvitationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Invitation
+        fields = '__all__'

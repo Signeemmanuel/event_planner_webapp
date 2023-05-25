@@ -3,6 +3,7 @@ from knox.views import LogoutView, LogoutAllView
 from .views import *
 from rest_framework.routers import DefaultRouter
 
+
 router = DefaultRouter()
 router.register('events', EventViewSet, basename="events")
 router.register('budgets', BudjetViewSet, basename="budgets")
@@ -10,6 +11,7 @@ router.register('agenders', AgenderViewSet, basename='agenders')
 router.register('guests', GuestViewSet, basename='guests')
 router.register('reports', ReportViewSet, basename='reports')
 router.register('rsvps', RSVPViewSet, basename="rsvps")
+router.register('invitations', InvitationViewSet, basename="invitations")
 
 urlpatterns = [
     path('login/', login_view, name='login view'),
