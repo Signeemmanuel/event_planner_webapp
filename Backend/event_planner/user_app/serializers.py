@@ -39,9 +39,9 @@ class UserSerializer(serializers.ModelSerializer):
         return user
         
 
-class AgenderSerializer(serializers.ModelSerializer):
+class AgendaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Agender
+        model = Agenda
         fields = '__all__'
     
     
