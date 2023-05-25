@@ -33,7 +33,7 @@ class Report(models.Model):
     summary = models.TextField()
     
 
-class Agender(models.Model):
+class Agenda(models.Model):
     activity_name = models.CharField(max_length=255, blank=False, null=False)
     time = models.TimeField()
     

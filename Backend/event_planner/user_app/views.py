@@ -65,12 +65,12 @@ class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
     
     
-class AgenderViewSet(viewsets.ModelViewSet):
-    queryset = Agender.objects.all()
-    serializer_class = AgenderSerializer
+class AgendaViewSet(viewsets.ModelViewSet):
+    queryset = Agenda.objects.all()
+    serializer_class = AgendaSerializer
     
     
-class BudjetViewSet(viewsets.ModelViewSet):
+class BudgetViewSet(viewsets.ModelViewSet):
     queryset = Budget.objects.all()
     serializer_class = BudgetSerializer
     
