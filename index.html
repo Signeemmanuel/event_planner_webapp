@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Evena | Contact Us</title>
+    <title>Evena | Home</title>
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
-<body>
+<body> 
+    
     <!--header-->
     <header id="site-header" class="fixed-top">
         <div class="container">
@@ -32,13 +33,30 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="events/index.html">Events</a>
+                            <div class="dropdown">
+                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
+                                    Events <i class="fa fa-caret-down"></i>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a href="events/index.html" class="dropdown-item" type="button">Upcoming Events</a>
+                                    <a href="events/index.html" class="dropdown-item" type="button">RSVP</a>
+                                    <a href="events/index.html" class="dropdown-item" type="button">All Events</a>
+                                  </div>
+                                </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="contact.html">Contact</a>
                         </li>
-                        <li class="nav-item login">
-                            <a class="nav-link" href="user/login.html">Login</a>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Account <i class="fa fa-caret-down"></i>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a href="user/login.html" class="dropdown-item" type="button">Login</a>
+                                    <a href="user/register.html" class="dropdown-item" type="button">Register</a>
+                                  </div>
+                                </div>
                         </li>
                     </ul>
                 </div>
@@ -63,14 +81,15 @@
     </header>
     <!--//header-->
 
-        <!-- banner section -->
+
+    <!-- banner section -->
     <section id="home" class="tea-banner py-5">
         <div class="banner-image">
         </div>
         <div class="banner-content">
             <div class="container pt-5 pb-md-4">
-                <div class="row align-items-center py-4">
-                    <div class="col-md-6 pr-lg-5">
+                <div class="row align-items-center px py-4">
+                    <div class="col-md-6 pr-lg-5 banner-left">
                         <h3 class="mb-lg-4 mb-3 title"><span>12 Events</span> Are <br> waiting for you <br> to attend</h3>
                         <p class="mr-5">Are you an event host? It is now easy to track and manage your event plans. You are 
                         just a click away</p>
@@ -169,7 +188,9 @@
         </div>
     </section>
 
-    <!-- footer -->
+
+   
+   <!-- footer -->
     <footer class="bt_footer">
         <div class="footer-29 pt-5">
             <div class="container py-lg-4">
@@ -310,7 +331,7 @@
 
 </body>
 
-</html>
+
 </body>
 
 </html>
