@@ -7,7 +7,6 @@ class User(AbstractUser):
     contact = models.IntegerField(blank=True, null=True)
     
     REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
-    
 
 class Budget(models.Model):
     item_name = models.CharField(max_length=255, blank=False, null=False)
@@ -49,11 +48,10 @@ class Event(models.Model):
     location = models.CharField(max_length=255,blank=False, null=False)
     description = models.TextField()
     event_type = models.CharField(max_length=255, blank=False, null=False)
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
+    username = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
     budget = models.ForeignKey(Budget, on_delete=models.SET_NULL, blank=False, null=True)
     report_id = models.ForeignKey(Report, on_delete=models.SET_NULL, blank=False, null=True)
     agender_id = models.ForeignKey(Agender, on_delete=models.SET_NULL, blank=False, null=True)
-    
     def __str__(self):
         return self.name
 
@@ -61,3 +59,13 @@ class Event(models.Model):
 class RSVP(models.Model):
     event_id = models.ForeignKey(Event, on_delete=models.CASCADE, blank=False, null=False)
     email = models.ForeignKey(Guest, on_delete=models.CASCADE, blank=False, null=False)
+
+
+class Invitation(models.Model):
+    event = models.ForeignKey('Event', on_delete=models.CASCADE)
+    invited_user_email = models.EmailField(max_length=255)
+    invitation_url = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ('event',)
+        
