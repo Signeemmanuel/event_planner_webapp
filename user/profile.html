@@ -150,33 +150,32 @@
                     <div class="row">
                         <div class="col-6 col-lg-3">
                             <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
+                                <h6 class="color h1" data-to="00" data-speed="00">00</h6>
                                 <p class="m-0px font-w-600">Events Created</p>
+                                <p class="mt-4"><a class="color" href="../events/create.html">Create Event</a></p>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
+                                <h6 class="color h1" data-to="00" data-speed="00">00</h6>
                                 <p class="m-0px font-w-600">Events Attended</p>
+                                <p class="mt-4"><a class="color" href="../events/myevents.html">View My Events</a></p>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
+                                <h6 class="color h1" data-to="00" data-speed="00">00</h6>
                                 <p class="m-0px font-w-600">RSVP Created</p>
+                                <p class="mt-4"><a class="color" href="../events/myrsvp.html">View RSVP</a></p>
                             </div>
                         </div>
                         <div class="col-6 col-lg-3">
                             <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
+                                <h6 class="color h1" data-to="00" data-speed="00">00</h6>
                                 <p class="m-0px font-w-600">Event Reports</p>
+                                <p class="mt-4"><a class="color" href="../events/myevents.html">View Reports</a></p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 mt-5 mb-5">
-                        <a class="text-center font-w-600" href="../events/create.html">Create New Event</a>
                     </div>
                 </div>
             </div>
@@ -196,6 +195,10 @@
               <div class="modal-body">
                 <form action="#" method="post">
                   <div class="form-group">
+                    <label for="profile_pic" class="col-form-label">Profile Picture:</label>
+                    <input type="file" name="profile_pic" class="form-control" required>
+                  </div>
+                  <div class="form-group">
                     <label for="first_name" class="col-form-label">First Name:</label>
                     <input type="text" name="first_name" class="form-control" required>
                   </div>
@@ -211,7 +214,7 @@
                     <label for="about_me" class="col-form-label">About Me:</label>
                     <textarea class="form-control" id="about_me" name="about_me" rows="4" cols="50"></textarea>
                   </div>
-                    <button type="submit" name="submit" class="btn btn-style">Confirm RSVP</button>
+                    <button type="submit" name="submit" class="btn btn-style">Edit Profile</button>
                 </form>
               </div>
             </div>

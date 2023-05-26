@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Evena | Events</title>
+    <title>Evena | Event Report</title>
     <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/event.css">
 </head>
 
 <body>
@@ -85,79 +86,93 @@
     <section class="inner-banner py-5">
         <div class="tea-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="white inner-text-title font-weight-bold pt-5">Event Details</h4>
+                <h4 class="white inner-text-title font-weight-bold pt-5">Event Report</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li class="white"><a href="../index.html">Home</a></li>
-                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Events</li>
+                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Event Report</li>
                 </ul>
             </div>
         </div>
     </section>
     <!-- //breadcrumb -->
 
-    <div class="container">
 
-    <div class="contact__wrapper shadow-lg mt-5 mb-5">
-        <div class="row no-gutters">    
-            <div class="col-md-12 contact-form__wrapper p-5 order-lg-1">
-                <h1 class="text-center mb-5">Create New Event</h1>
-                <form action="#" method="post">
-                    <div class="row">
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text">Upload</span>
-                          </div>
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                            <div class="form-group">
-                                <label class="required-field" for="firstName">Event Name</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Event Name">
-                            </div>
-                        </div>
-    
-                        <div class="col-sm-6 mb-3">
-                            <div class="form-group">
-                                <label for="event_date">Event Date</label>
-                                <input type="date" class="form-control" id="event_date" name="event_date" placeholder="Event Date">
-                            </div>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                            <div class="form-group">
-                                <label for="event_location">Event Location</label>
-                                <input type="tel" class="form-control" id="event_location" name="event_location" placeholder="Event Location">
-                            </div>
-                        </div>    
-                        <div class="col-sm-6 mb-3">
-                            <div class="form-group">
-                                <label for="event_size">Event Size</label>
-                                <input type="tel" class="form-control" id="event_size" name="event_size" placeholder="Event Size">
-                            </div>
-                        </div>
-    
-                        <div class="col-sm-12 mb-3">
-                            <div class="form-group">
-                                <label class="required-field" for="message">Event Details</label>
-                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Event Details"></textarea>
-                            </div>
-                        </div>
-    
-                        <div class="col-sm-12 mb-3 text-center">
-                            <button type="submit" name="submit" class="btn btn-style">Create Event</button>
-                        </div>
-    
-                    </div>
-                </form>
+        <div class="container">
+        <div class="col-md-12 col-12 col-sm-12 mt-5 mb-5">
+                <h1 class="text-center mb-5"> Event Report</h1>
+            <div class="card mt-5">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <tbody>
+                    <tr>
+                      <th>Event Name</th>
+                      <th>Event Details</th>
+                      <th>Location</th>
+                      <th>Event Date</th>
+                      <th>Attended</th>
+                    </tr>
+                    <tr>
+                          <td>Lorem ipsum dolor sit amet</td>
+                          <td class="">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </td>
+                          <td>Bambili, Hall 16</td>
+                          <td>01 Jan 2023</td>
+                          <td>
+                            00
+                          </td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+              </div>
             </div>
-            <!-- End Contact Form Wrapper -->
-    
+          </div>
         </div>
-    </div>
-</div>
    
+
+      <!--    edit details -->
+        <div class="modal fade" id="editProfModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label for="event_name" class="col-form-label">Event Name:</label>
+                    <input type="text" name="event_name" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="event_size" class="col-form-label">Event Size:</label>
+                    <input type="text" name="event_size" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="event_location" class="col-form-label">Event Location:</label>
+                    <input type="text" name="event_location" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="details" class="col-form-label">Event Details:</label>
+                    <textarea class="form-control" id="details" name="details" rows="4" cols="50"></textarea>
+                  </div>
+                    <button type="submit" name="submit" class="btn btn-style">Edit Event</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
     <!-- footer -->
     <footer class="bt_footer">
         <div class="footer-29 pt-5">

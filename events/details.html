@@ -49,22 +49,22 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="../index.html">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <div class="dropdown">
                                   <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">Upcoming Events</a>
-                                    <a href="index.html" class="dropdown-item" type="button">RSVP</a>
                                     <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
+                                    <a href="create.html" class="dropdown-item" type="button">Create Events</a>
                                   </div>
                                 </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="contact.html">Contact</a>
+                            <a class="nav-link" href="../contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
                             <div class="dropdown">
@@ -74,6 +74,8 @@
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <a href="../user/login.html" class="dropdown-item" type="button">Login</a>
                                     <a href="../user/register.html" class="dropdown-item" type="button">Register</a>
+                                    <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
+                                    <a href="#" class="dropdown-item" type="button">Logout</a>
                                   </div>
                                 </div>
                         </li>
@@ -127,6 +129,9 @@
                                <!-- Button trigger modal -->
                         <button type="button" class="btn btn-style" data-toggle="modal" data-target="#rsvpModal">
                           RSVP for this Event
+                        </button>
+                        <button type="button" class="btn btn-style" data-toggle="modal" data-target="#shareModal">
+                          Share this event &nbsp; <i class="fa fa-share"></i>
                         </button>
 
                         </p>
@@ -182,6 +187,37 @@
                     <input type="number" name="contact" min="650000000" max="699999999" class="form-control"`required>
                   </div>
                     <button type="submit" name="submit" class="btn btn-style">Confirm RSVP</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <!--    rsvp -->
+        <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Invite friends for this event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Email: </label>
+                    <input type="text" name="first_name" class="form-control" required>
+                  </div>
+                  <div class="form-group" hidden>
+                    <label for="event_url" class="col-form-label">Event Url:</label>
+                    <input type="text" name="event_url" class="form-control">
+                  </div>
+                <div class="form-group" hidden>
+                    <label class="required-field" for="event_details">Event Details</label>
+                    <textarea class="form-control" id="event_details" name="event_details" rows="4" placeholder="Event Details"></textarea>
+                </div>
+                <button type="submit" name="submit" class="btn btn-style">Send Invitation</button>
                 </form>
               </div>
             </div>

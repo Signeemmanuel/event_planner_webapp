@@ -1,3 +1,7 @@
+.color {
+  color: #006e99;
+}
+
 .section {
     padding: 100px 0;
     position: relative;
@@ -12,8 +16,7 @@ img {
     vertical-align: middle;
     border-style: none;
 }
-/* About Me 
----------------------*/
+
 .about-text h3 {
   font-size: 45px;
   font-weight: 700;
