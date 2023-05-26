@@ -104,3 +104,4 @@ class InvitationViewSet(viewsets.ModelViewSet):
         #send_invitation_email(invitation)  
         
         return Response(serializer.data, status=201)
+    

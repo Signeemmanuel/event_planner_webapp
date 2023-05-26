@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/form.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -69,7 +71,7 @@
                 <div class="form-content">
                     <header>Register</header>
                     <p class="text-center">Create a free account</p>
-                    <form action="#" method="post">
+                    <form action="#" method="post" id="register-form">
                         <div class="double-in">
                             <div class="field input-field double">
                                 <input type="text" name="first_name" autofocus placeholder="First Name" class="input" required>
@@ -113,11 +115,16 @@
 
                     <div class="form-link">
                         <span>Already have an account? <a href="login.html" class="link signup-link">Login</a></span>
+                        <div id="div1">hello world</div>
+                        
                     </div>
                 </div>
 
             </div>
         </section>
+<button id="btnhide" class="btn btn-success">h$("button").$("button").oo</button>
+<button id="hide" class="btn">hide</button>
+        
 
     <!-- footer -->
     <footer class="bt_footer">
@@ -218,7 +225,7 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../assets/js/jquery-3.3.1.min.js"></script> -->
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
     <!-- bootstrap -->
@@ -260,7 +267,7 @@
 
 
         <!-- JavaScript -->
-        <script src="js/script.js">
+        <script >
             const forms = document.querySelector(".forms"),
       pwShowHide = document.querySelectorAll(".eye-icon"),
       links = document.querySelectorAll(".link");
@@ -288,6 +295,65 @@ links.forEach(link => {
        forms.classList.toggle("show-signup");
     })
 })
+        </script>
+        <script>
+            var jq = $.noConflict();
+            jq(document).ready(function () {
+    var token = localStorage.getItem('token');
+    
+    if(!token) {
+        console.log("you are not authenticated")
+    }
+    $("#register-form").submit(function (e) { 
+        e.preventDefault();
+        var formdata = {
+            username: jq("input[name='user_name']"),
+            password: jq("input[name='password']"),
+            email: jq("input[name='email']"),
+            first_name: jq("input[name='first_name']"),
+            last_name: jq("input[name='last_name']"),
+            contact: jq("input[name='contact']"),
+        };
+        
+        register();
+        function register() {
+            jq.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:8000/api/register/",
+                data: formdata,
+                success: function (response) {
+                    localStorage.setItem('token', response.token);
+                    // Navigate to home page
+                    window.location("./home.html")
+                    console.log(response)
+                },
+                error: function (error) {
+                    console.log(console.error());        
+                }
+            });
+        }
+    });
+
+});
+
+
+
+
+        </script>
+        <script>
+            $(document).ready(function() {
+                // $("button").click(funtion() {
+                //     $.ajax({
+                //         url: "text.txt",
+                //         success: function (result) {
+                //             $("#div1").html("Request")     
+                //         }
+                //     });
+                // })
+                $("#hide").click(function(){
+                    $("#btnhide").hide();
+                })
+            })
         </script>
 </body>
 
