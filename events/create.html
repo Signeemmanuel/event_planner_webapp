@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Evena | Events</title>
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+
+<body>
+    <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg stroke px-0">
+                <h1>
+                    <a class="navbar-brand" href="index.html">
+                       EVE<span>NA</span>
+                    </a>
+                </h1>
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <div class="dropdown">
+                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
+                                    Events <i class="fa fa-caret-down"></i>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a href="index.html" class="dropdown-item" type="button">Upcoming Events</a>
+                                    <a href="index.html" class="dropdown-item" type="button">RSVP</a>
+                                    <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                  </div>
+                                </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Account <i class="fa fa-caret-down"></i>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a href="../user/login.html" class="dropdown-item" type="button">Login</a>
+                                    <a href="../user/register.html" class="dropdown-item" type="button">Register</a>
+                                  </div>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- toggle switch for light and dark theme -->
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->
+            </nav>
+        </div>
+    </header>
+    <!--//header-->
+
+    <!-- breadcrumb -->
+    <section class="inner-banner py-5">
+        <div class="tea-breadcrumb py-lg-5">
+            <div class="container pt-4 pb-sm-4">
+                <h4 class="white inner-text-title font-weight-bold pt-5">Event Details</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li class="white"><a href="../index.html">Home</a></li>
+                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Events</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //breadcrumb -->
+
+    <div class="container">
+
+    <div class="contact__wrapper shadow-lg mt-5 mb-5">
+        <div class="row no-gutters">    
+            <div class="col-md-12 contact-form__wrapper p-5 order-lg-1">
+                <h1 class="text-center mb-5">Create New Event</h1>
+                <form action="#" method="post">
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="firstName">Event Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Event Name">
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="event_date">Event Date</label>
+                                <input type="date" class="form-control" id="event_date" name="event_date" placeholder="Event Date">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="event_location">Event Location</label>
+                                <input type="tel" class="form-control" id="event_location" name="event_location" placeholder="Event Location">
+                            </div>
+                        </div>    
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label for="event_size">Event Size</label>
+                                <input type="tel" class="form-control" id="event_size" name="event_size" placeholder="Event Size">
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-12 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="message">Event Details</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Event Details"></textarea>
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-12 mb-3 text-center">
+                            <button type="submit" name="submit" class="btn btn-style">Create Event</button>
+                        </div>
+    
+                    </div>
+                </form>
+            </div>
+            <!-- End Contact Form Wrapper -->
+    
+        </div>
+    </div>
+</div>
+   
+
+        <!--    rsvp -->
+        <div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">RSVP for this event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">First Name:</label>
+                    <input type="text" name="first_name" class="form-control"`required>
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Last Name:</label>
+                    <input type="text" name="last_name" class="form-control"`required>
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Email:</label>
+                    <input type="email" name="email" class="form-control"`required>
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Contact:</label>
+                    <input type="number" name="contact" min="650000000" max="699999999" class="form-control"`required>
+                  </div>
+                    <button type="submit" name="submit" class="btn btn-style">Confirm RSVP</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- footer -->
+    <footer class="bt_footer">
+        <div class="footer-29 pt-5">
+            <div class="container py-lg-4">
+                <div class="row footer-top-29">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-md-3 col-6 ftl">
+                                <ul>
+                                    <h6 class="ft_title">Events</h6>
+                                    <li><a href="index.html">Upcoming Events</a></li>
+                                    <li><a href="index.html">Plan Events</a></li>
+                                    <li><a href="index.html">Event Stats</a></li>
+                                    <li><a href="index.html">All Events</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-6 ftl">
+                                <ul>
+                                    <h6 class="ft_title">Quick Links</h6>
+                                    <li><a href="../user/login.html">Login</a></li>
+                                    <li><a href="../user/register.html">Register</a></li>
+                                    <li><a href="#">Check In</a></li>
+                                    <li><a href="index.html">RSVP</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-6 ftl mt-md-0 mt-4">
+                                <ul>
+                                    <h6 class="ft_title">Company</h6>
+                                    <li><a href="../company/about.html">About Us</a></li>
+                                    <li><a href="../company/services.html">Services</a></li>
+                                    <li><a href="../company/team.html">Team</a></li>
+                                    <li><a href="../company/projects.html">Projects</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-6 ftl mt-md-0 mt-4">
+                                <h6 class="ft_title">Support</h6>
+                                <ul>
+                                    <li><a href="../contact.html">Contact Us</a></li>
+                                    <li><a href="../faq.html">Faq's</a></li>
+                                    <li><a href="../company/privacy.html">Privacy Policy</a></li>
+                                    <li><a href="../company/terms.html"> Terms of Service</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 footer-contact-list mt-lg-0 mt-md-5 mt-4">
+                        <h6 class="ft_title">Social Media</h6>
+                        <div class="social_ft">
+                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="github"><i class="fab fa-github"></i></a>
+                        </div>
+                        <div class="subs">
+                            <h6 class="ft_title-sm mt-4">Subscribe to our Newsletter</h6>
+                            <form action="#" method="GET" class="subscribe-box ">
+                                <input type="search" placeholder="Enter Email" name="search" required="required"
+                                     class="search-popup">
+                                <button type="submit" class="btn subs-btn"><i class="fa fa-paper-plane"
+                                        aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-12"> 
+                        <p class="copyright mt-4">&copy; 2023 <span>EVENA</span>. All rights reserved. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- scroll to top  -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+
+
+    <!-- Js scripts -->
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <!-- theme switch js (light and dark)-->
+    <script src="../assets/js/theme-change.js"></script>
+    <!-- bootstrap -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+
+</body>
+
+</html>
+</body>
+
+</html>
