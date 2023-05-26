@@ -44,7 +44,7 @@ class Agenda(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=255, blank=False, null=False)
     date = models.DateField(blank=False, null=False)
-    time = models.TimeField(blank=False, null=False)
+    # time = models.TimeField(blank=False, null=False)
     location = models.CharField(max_length=255,blank=False, null=False)
     description = models.TextField()
     event_type = models.CharField(max_length=255, blank=False, null=False)

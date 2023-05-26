@@ -9,6 +9,7 @@ djangorestframework = "*"
 markdown = "*"
 mysqlclient = "*"
 django-rest-knox = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

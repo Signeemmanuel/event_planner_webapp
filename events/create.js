@@ -7,31 +7,36 @@ $(document).ready(function () {
     else {
         console.log(token);
     }
-    $("#register-form").submit(function (e) { 
+    $("#create-form").submit(function (e) { 
         e.preventDefault();
         var formData = {
-            username: $("input[name='username']").val(),
-            password: $("input[name='password']").val(),
-            email: $("input[name='email']").val(),
-            first_name: $("input[name='first_name']").val(),
-            last_name: $("input[name='last_name']").val(),
-            contact: $("input[name='contact']").val(),
+            name: $("input[name='EventName']").val(),
+            date: $("input[name='event_date']").val(),
+            location: $("input[name='event_location']").val(),
+            date: $("input[name='event_date']").val(),
+            date: $("input[name='event_date']").val(),
+            date: $("input[name='event_date']").val(),
+            date: $("input[name='event_date']").val(),
         };
         // var formData = $(this).serialize();
-        register();
-        function register() {
+        login();
+        function login() {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:8000/api/register/",
+                url: "http://127.0.0.1:8000/api/login/",
                 data: formData,
                 success: function (response) {
                     localStorage.setItem('token', response.token);
                     // Navigate to home page
                     window.location.href = './index.html';
+
                     // console.log(response);
                 },
                 error: function (error) {
-                    console.log(console.error(error));        
+                    var errorEl = document.getElementById("error");
+                    console.log(console.error(error));
+                    return errorEl.style.display = 'block';
+                            
                 }
             });
         }

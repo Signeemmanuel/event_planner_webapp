@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Evena | Login</title>
-    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <!-- <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css"> -->
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/form.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="login.js"></script>
 </head>
 
 <body>
@@ -88,9 +90,11 @@
                 <div class="form-content">
                     <header>LOGIN</header>
                     <p class="text-center">Access your account</p>
-                    <form action="#" method="post">
+                    <div id="error" class="alert alert-danger" style="display: none;">Username or Password incorrect</div>
+                    <form id="login-form">
+
                         <div class="field input-field">
-                            <input type="email" name="email" placeholder="Email" class="input" required>
+                            <input type="text" name="username" placeholder="Username" class="input" required>
                         </div>
 
                         <div class="field input-field">
@@ -214,11 +218,11 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../assets/js/jquery-3.3.1.min.js"></script> -->
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
     <!-- bootstrap -->
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- <script src="../assets/js/bootstrap.min.js"></script> -->
     <!-- MENU-JS -->
     <script>
         $(window).on("scroll", function () {

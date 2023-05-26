@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Evena | Register</title>
-    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/form.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="register.js"></script>
 </head>
 
 <body>
@@ -90,7 +90,7 @@
                 <div class="form-content">
                     <header>Register</header>
                     <p class="text-center">Create a free account</p>
-                    <form action="#" method="post" id="register-form">
+                    <form id="register-form">
                         <div class="double-in">
                             <div class="field input-field double">
                                 <input type="text" name="first_name" autofocus placeholder="First Name" class="input" required>
@@ -121,11 +121,11 @@
                             </div>
                         </div>
 
-                        <div class="field">
+                        <!-- <div class="field">
                             <input type="checkbox" name="agree" id="agree" required>
                             <span class="checkmark"></span>
                             <label style="margin-left:40px" for="agree">I agree to the <a href="#" class="forgot-pass">Terms and Condition</a></label>
-                        </div>
+                        </div> -->
 
                         <div class="field button-field">
                             <button type="submit" name="submit">Register</button>
@@ -134,7 +134,6 @@
 
                     <div class="form-link">
                         <span>Already have an account? <a href="login.html" class="link signup-link">Login</a></span>
-                        <div id="div1">hello world</div>
                         
                     </div>
                 </div>
@@ -248,7 +247,7 @@
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
     <!-- bootstrap -->
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- <script src="../assets/js/bootstrap.min.js"></script> -->
     <!-- MENU-JS -->
     <script>
         $(window).on("scroll", function () {
@@ -284,96 +283,6 @@
         });
     </script>
 
-
-        <!-- JavaScript -->
-        <script >
-            const forms = document.querySelector(".forms"),
-      pwShowHide = document.querySelectorAll(".eye-icon"),
-      links = document.querySelectorAll(".link");
-
-pwShowHide.forEach(eyeIcon => {
-    eyeIcon.addEventListener("click", () => {
-        let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
-        
-        pwFields.forEach(password => {
-            if(password.type === "password"){
-                password.type = "text";
-                eyeIcon.classList.replace("bx-hide", "bx-show");
-                return;
-            }
-            password.type = "password";
-            eyeIcon.classList.replace("bx-show", "bx-hide");
-        })
-        
-    })
-})      
-
-links.forEach(link => {
-    link.addEventListener("click", e => {
-       e.preventDefault(); //preventing form submit
-       forms.classList.toggle("show-signup");
-    })
-})
-        </script>
-        <script>
-            var jq = $.noConflict();
-            jq(document).ready(function () {
-    var token = localStorage.getItem('token');
-    
-    if(!token) {
-        console.log("you are not authenticated")
-    }
-    $("#register-form").submit(function (e) { 
-        e.preventDefault();
-        var formdata = {
-            username: jq("input[name='user_name']"),
-            password: jq("input[name='password']"),
-            email: jq("input[name='email']"),
-            first_name: jq("input[name='first_name']"),
-            last_name: jq("input[name='last_name']"),
-            contact: jq("input[name='contact']"),
-        };
-        
-        register();
-        function register() {
-            jq.ajax({
-                type: "POST",
-                url: "http://127.0.0.1:8000/api/register/",
-                data: formdata,
-                success: function (response) {
-                    localStorage.setItem('token', response.token);
-                    // Navigate to home page
-                    window.location("./home.html")
-                    console.log(response)
-                },
-                error: function (error) {
-                    console.log(console.error());        
-                }
-            });
-        }
-    });
-
-});
-
-
-
-
-        </script>
-        <script>
-            $(document).ready(function() {
-                // $("button").click(funtion() {
-                //     $.ajax({
-                //         url: "text.txt",
-                //         success: function (result) {
-                //             $("#div1").html("Request")     
-                //         }
-                //     });
-                // })
-                $("#hide").click(function(){
-                    $("#btnhide").hide();
-                })
-            })
-        </script>
 </body>
 
 </html>
