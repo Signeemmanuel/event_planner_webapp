@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Evena | Home</title>
+    <title>Evena | Events</title>
     <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="stylesheet" href="../assets/css/event.css">
 </head>
 
 <body>
@@ -30,37 +30,36 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <div class="dropdown">
                                   <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="../events/index.html" class="dropdown-item" type="button">Upcoming Events</a>
-                                    <a href="../events/index.html" class="dropdown-item" type="button">RSVP</a>
-                                    <a href="../events/index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="index.html" class="dropdown-item" type="button">Upcoming Events</a>
+                                    <a href="index.html" class="dropdown-item" type="button">RSVP</a>
+                                    <a href="index.html" class="dropdown-item" type="button">All Events</a>
                                   </div>
                                 </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../contact.html">Contact</a>
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
-                        <div class="ddown">
-                            <button class="dropbtn" onclick="myFunction()">Account
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                              <div class="dropdown-content" id="myDropdown">
-                                <a href="profile.html">My Account</a>
-                                <a href="#">Settings</a>
-                                <a href="#">Logout</a>
-                              </div>
-                              </div>
-                        
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Account <i class="fa fa-caret-down"></i>
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a href="../user/login.html" class="dropdown-item" type="button">Login</a>
+                                    <a href="../user/register.html" class="dropdown-item" type="button">Register</a>
+                                  </div>
+                                </div>
+                        </li>
                     </ul>
                 </div>
-                
                 <!-- toggle switch for light and dark theme -->
                 <div class="cont-ser-position">
                     <nav class="navigation">
@@ -85,110 +84,87 @@
     <section class="inner-banner py-5">
         <div class="tea-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="inner-text-title font-weight-bold pt-5">Welcome {{username}}</h4>
+                <h4 class="white inner-text-title font-weight-bold pt-5">My Events</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="home.html">Dashboard</a></li>
-                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Profile</li>
+                    <li class="white"><a href="../index.html">Home</a></li>
+                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Events</li>
                 </ul>
             </div>
         </div>
     </section>
     <!-- //breadcrumb -->
 
-    <section class="section about-section gray-bg" id="about">
-            <div class="container">
-                <div class="row align-items-center flex-row-reverse">
-                    <div class="col-lg-6">
-                        <div class="about-text go-to">
-                            <h3 class="dark-color">About Me</h3>
-                            <h6 class="theme-color lead">A Lead UX &amp; UI designer based in Canada</h6>
-                            <p>I <mark>design and develop</mark> services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
-                            <div class="row about-list">
-                                <div class="col-md-6">
-                                    <div class="media">
-                                        <label>First Name</label>
-                                        <p>Bayman</p>
-                                    </div>
-                                    <div class="media">
-                                        <label>Last Name</label>
-                                        <p>Bayman</p>
-                                    </div>
-                                    <div class="media">
-                                        <label>Address</label>
-                                        <p>Bambili,</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="media">
-                                        <label>E-mail</label>
-                                        <p>info@hello.com</p>
-                                    </div>
-                                    <div class="media">
-                                        <label>Phone</label>
-                                        <p>820-885-3321</p>
-                                    </div>
-                                    <div class="media">
-                                        <label>Status</label>
-                                        <p>Event Creator</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 mb-5">
-                                    <button type="button" class="btn btn-style" data-toggle="modal" data-target="#editProfModal">
-                                      Edit Profile
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about-avatar">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
-                        </div>
-                    </div>
+
+        <div class="container">
+        <div class="col-md-12 col-12 col-sm-12 mt-5 mb-5">
+                <h1 class="text-center mb-5">My Events</h1>
+            <div class="card mt-5">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <tbody><tr>
+                      <th class="text-center">
+                        No
+                      </th>
+                      <th>Event Name</th>
+                      <th>RSVP spots</th>
+                      <th>Due Date</th>
+                      <th>Action</th>
+                    </tr>
+                    <tr>
+                          <td class="p-0 text-center">
+                            1
+                          </td>
+                          <td>Event Name</td>
+                          <td class="">
+                            00
+                          </td>
+                          <td>01 Jan 2023</td>
+                          <td>
+                            <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
+                          </td>
+                    </tr>
+                    <tr>
+                          <td class="p-0 text-center">
+                            2
+                          </td>
+                          <td>Event Name</td>
+                          <td class="">
+                            00
+                          </td>
+                          <td>01 Jan 2023</td>
+                          <td>
+                            <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
+                          </td>
+                    </tr>
+                    <tr>
+                          <td class="p-0 text-center">
+                            3
+                          </td>
+                          <td>Event Name</td>
+                          <td class="">
+                            00
+                          </td>
+                          <td>01 Jan 2023</td>
+                          <td>
+                            <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
+                          </td>
+                    </tr>
+                  </tbody>
+                </table>
                 </div>
-                <div class="counter">
-                    <div class="row">
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
-                                <p class="m-0px font-w-600">Events Created</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
-                                <p class="m-0px font-w-600">Events Attended</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
-                                <p class="m-0px font-w-600">RSVP Created</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-3">
-                            <div class="count-data text-center">
-                                <h6 class="count h2" data-to="00" data-speed="00">00</h6>
-                                <p class="m-0px font-w-600">Event Reports</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 mt-5 mb-5">
-                        <a class="text-center font-w-600" href="../events/create.html">Create New Event</a>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
    
 
-   <!--    edit profile -->
+      <!--    edit profile -->
         <div class="modal fade" id="editProfModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Edit Profile</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Event</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -196,28 +172,27 @@
               <div class="modal-body">
                 <form action="#" method="post">
                   <div class="form-group">
-                    <label for="first_name" class="col-form-label">First Name:</label>
-                    <input type="text" name="first_name" class="form-control" required>
+                    <label for="event_name" class="col-form-label">Event Name:</label>
+                    <input type="text" name="event_name" class="form-control" required>
                   </div>
                   <div class="form-group">
-                    <label for="last_name" class="col-form-label">Last Name:</label>
-                    <input type="text" name="last_name" class="form-control" required>
+                    <label for="event_size" class="col-form-label">Event Size:</label>
+                    <input type="text" name="event_size" class="form-control" required>
                   </div>
                   <div class="form-group">
-                    <label for="address" class="col-form-label">Address:</label>
-                    <input type="text" name="address" class="form-control" required>
+                    <label for="event_location" class="col-form-label">Event Location:</label>
+                    <input type="text" name="event_location" class="form-control" required>
                   </div>
                   <div class="form-group">
-                    <label for="about_me" class="col-form-label">About Me:</label>
-                    <textarea class="form-control" id="about_me" name="about_me" rows="4" cols="50"></textarea>
+                    <label for="details" class="col-form-label">Event Details:</label>
+                    <textarea class="form-control" id="details" name="details" rows="4" cols="50"></textarea>
                   </div>
-                    <button type="submit" name="submit" class="btn btn-style">Confirm RSVP</button>
+                    <button type="submit" name="submit" class="btn btn-style">Edit Event</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
-
 
 
     <!-- footer -->
@@ -319,25 +294,6 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script>        
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-          if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-              }
-            }
-          }
-        }
-        </script>
-
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
