@@ -17,6 +17,13 @@
   background: #0080b3;
 }
 
+.color{
+  color: #006e99;
+}
+.table_head {
+  font-weight: 700;
+  color: #006e99;
+}
 
 /* button style */
 .btn-style {
@@ -36,17 +43,17 @@
   color: #111;
 }
 
-.nav-item a{
+header-component .nav-item a{
   font-weight: 700 !important;
 }
 
-.nav-item a:hover{
+header-component .nav-item a:hover{
   color:#006e99 !important;
 }
-.nav-item.login a:hover{
+header-component .nav-item.login a:hover{
   color:#fff !important;
 }
-.nav-item.login{
+header-component .nav-item.login{
   background: #006e99;
   color: #fff !important;
   padding: 1px 35px !important;
