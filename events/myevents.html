@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item active">
                             <div class="dropdown">
@@ -38,14 +38,14 @@
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">Upcoming Events</a>
-                                    <a href="index.html" class="dropdown-item" type="button">RSVP</a>
                                     <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
+                                    <a href="create.html" class="dropdown-item" type="button">Create Events</a>
                                   </div>
                                 </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="../contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
                             <div class="dropdown">
@@ -55,6 +55,8 @@
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <a href="../user/login.html" class="dropdown-item" type="button">Login</a>
                                     <a href="../user/register.html" class="dropdown-item" type="button">Register</a>
+                                    <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
+                                    <a href="#" class="dropdown-item" type="button">Logout</a>
                                   </div>
                                 </div>
                         </li>
@@ -97,7 +99,7 @@
 
         <div class="container">
         <div class="col-md-12 col-12 col-sm-12 mt-5 mb-5">
-                <h1 class="text-center mb-5">My Events</h1>
+                <h1 class="text-center mb-5 table_head">My Events</h1>
             <div class="card mt-5">
               <div class="card-body">
                 <div class="table-responsive">
@@ -110,6 +112,7 @@
                       <th>RSVP spots</th>
                       <th>Due Date</th>
                       <th>Action</th>
+                      <th>Details</th>
                     </tr>
                     <tr>
                           <td class="p-0 text-center">
@@ -123,6 +126,8 @@
                           <td>
                             <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
                           </td>
+                          <td>
+                            <a href="eventreport.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-file"> View Event Report</i></a></td>
                     </tr>
                     <tr>
                           <td class="p-0 text-center">
@@ -136,6 +141,8 @@
                           <td>
                             <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
                           </td>
+                          <td>
+                            <a href="eventreport.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-file"> View Event Report</i></a></td>
                     </tr>
                     <tr>
                           <td class="p-0 text-center">
@@ -149,6 +156,8 @@
                           <td>
                             <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
                           </td>
+                          <td>
+                            <a href="eventreport.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-file"> View Event Report</i></a></td>
                     </tr>
                   </tbody>
                 </table>
