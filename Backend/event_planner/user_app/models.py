@@ -47,11 +47,11 @@ class Event(models.Model):
     # time = models.TimeField(blank=False, null=False)
     location = models.CharField(max_length=255,blank=False, null=False)
     description = models.TextField()
-    event_type = models.CharField(max_length=255, blank=False, null=False)
-    username = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
-    budget = models.ForeignKey(Budget, on_delete=models.SET_NULL, blank=False, null=True)
-    report_id = models.ForeignKey(Report, on_delete=models.SET_NULL, blank=False, null=True)
-    agender_id = models.ForeignKey(Agenda, on_delete=models.SET_NULL, blank=False, null=True)
+    event_type = models.CharField(max_length=255, blank=True, null=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
+    budget_id = models.ForeignKey(Budget, on_delete=models.SET_NULL, blank=True, null=True)
+    report_id = models.ForeignKey(Report, on_delete=models.SET_NULL, blank=True, null=True)
+    agender_id = models.ForeignKey(Agenda, on_delete=models.SET_NULL, blank=True, null=True)
     def __str__(self):
         return self.name
 

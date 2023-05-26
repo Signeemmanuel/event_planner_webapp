@@ -1,4 +1,4 @@
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import viewsets
 from rest_framework.authtoken.serializers import AuthTokenSerializer
@@ -10,7 +10,7 @@ from .serializers import *
 
 
 @api_view(['POST'])
-@permission_classes([])
+@permission_classes([AllowAny])
 def login_view(request):
     serializer = AuthTokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
@@ -29,8 +29,8 @@ def login_view(request):
 @api_view(['GET'])
 def get_user_data(request):
     user = request.user
-    print(request)
-    print(user)
+    # print(request)
+    # print(user)
     if user.is_authenticated:
         return Response({
             'user_info': {
@@ -43,7 +43,7 @@ def get_user_data(request):
 
 
 @api_view(['POST'])
-@permission_classes([])
+@permission_classes([AllowAny])
 def register_view(request):
     serializer = UserSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)

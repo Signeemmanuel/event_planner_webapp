@@ -1,11 +1,13 @@
 $(document).ready(function () {
     var token = localStorage.getItem('token');
+    var userID = localStorage.getItem('userID');
     
     if(!token) {
         console.log("you are not authenticated")
     }
     else {
         console.log(token);
+        console.log(userID);
     }
     $("#register-form").submit(function (e) { 
         e.preventDefault();
@@ -26,6 +28,7 @@ $(document).ready(function () {
                 data: formData,
                 success: function (response) {
                     localStorage.setItem('token', response.token);
+                    localStorage.setItem('userID', response.user_info.id);
                     // Navigate to home page
                     window.location.href = './index.html';
                     // console.log(response);

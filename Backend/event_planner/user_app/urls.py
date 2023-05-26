@@ -16,7 +16,7 @@ router.register('invitations', InvitationViewSet, basename="invitations")
 urlpatterns = [
     path('login/', login_view, name='login view'),
     path('register/', register_view, name='login view'),
-    path('user/', get_user_data, name="user data"),
+    path('users/', get_user_data, name="user data"),
     path('logout/', LogoutView.as_view(), name="logout view"),
     path('logallout/', LogoutAllView.as_view(), name="logout all view"),
     path('', include(router.urls)),

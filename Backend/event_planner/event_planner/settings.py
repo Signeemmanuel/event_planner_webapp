@@ -39,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'event_planner.urls'
@@ -129,6 +130,4 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ALLOWED_ORIGINS = [
-    r"C:\Users\JOSUE\Documents\Josue\Coding\Code\Learning-Django\event_planner_webapp\user\register.html"
-]
+CORS_ALLOW_ALL_ORIGINS = True
