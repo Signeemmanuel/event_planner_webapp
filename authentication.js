@@ -1,12 +1,11 @@
-$(document).ready(function () {
-    var token = localStorage.getItem('token');
-    // var userID = localStorage.getItem('userID');
-    
-    if(token) {
-        window.location.href = "../user/login.html";
-    }
+var token = localStorage.getItem('token');
+// var userID = localStorage.getItem('userID');
 
-    else {
-        console.log(token);
-    }
-})
+console.log(token, !token);
+if (token == 'null'  || !token) {
+    window.location.href = "../user/login.html";
+}
+
+else {
+    console.log(token, !token);
+}
