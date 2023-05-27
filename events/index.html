@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Evena | Events</title>
+    <!-- <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css"> -->
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/event.css">
+    <script src="../assets/js/jquery-3.7.0.min.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -104,56 +107,9 @@
     <div class="text-center mb-5">
         <h5 class=" h1 font-weight-bold">Upcoming Events</h5>
     </div>
-    <div class="row">
-        <div class="col-lg-4 col-md-6 mb-2-6">
-            <article class="card card-style2">
-                <a href="details.html" class="read-more">
-                    <div class="card-img">
-                        <img class="rounded-top" src="../assets/images/event1.jpg" alt="...">
-                        <div class="date"><span>24</span>JUNE</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="h3"><a href="details.html">Saturday Party Night</a></h3>
-                        <p class="display-30">We are inviting you to Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  </p><br>
-                        <a class="event-link" href="details.html">Read More</a>                        
-                    </div>
-                </a>
-            </article>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-2-6">
-            <article class="card card-style2">
-                <a href="details.html" class="read-more">
-                    <div class="card-img">
-                        <img class="rounded-top" src="../assets/images/event2.jpg" alt="...">
-                        <div class="date"><span>12</span>JULY</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="h3"><a href="details.html">Gala Night Party</a></h3>
-                        <p class="display-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua... </p><br>
-                        <a class="event-link" href="details.html">Read More</a>                        
-                    </div>
-                </a>
-            </article>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-2-6">
-            <article class="card card-style2">
-                <a href="details.html" class="read-more">
-                    <div class="card-img">
-                        <img class="rounded-top" src="../assets/images/event3.jpg" alt="...">
-                        <div class="date"><span>10</span>AUG</div>
-                    </div>
-                    <div class="card-body">
-                        <h3 class="h3"><a href="details.html">The Future of Work</a></h3>
-                        <p class="display-30">The future of work is in Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua... </p><br>
-                        <a class="event-link" href="details.html">Read More</a>                        
-                    </div>
-                </a>
-            </article>
-        </div>
-    </div>
+
+    <div class="row event_list" ></div>
+
 </div>
 </section>
    
@@ -257,7 +213,7 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../assets/js/jquery-3.3.1.min.js"></script> -->
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
     <!-- bootstrap -->
