@@ -4,32 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Evena | Events</title>
-    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/event.css">
+    <link rel="stylesheet" href="../assets/css/agenda.css">
+    <script src="../assets/js/jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
-    <style type="text/css">
-        .inner-banner {
-          background: url(../assets/images/event2.jpg) no-repeat;
-          background-size: cover;
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          -ms-background-size: cover;
-          position: relative;
-          z-index: 0;
-          background-position: 0 -120px;
-        }
-        header {
-            background-color: #fff;
-        }
-        .white{
-            color: #fff !important;
-        }
-    </style>
     <!--header-->
     <header id="site-header" class="fixed-top">
         <div class="container">
@@ -108,124 +89,194 @@
     <section class="inner-banner py-5">
         <div class="tea-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="white inner-text-title font-weight-bold pt-5">Event Details</h4>
+                <h4 class="white inner-text-title font-weight-bold pt-5">Agenda</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li class="white"><a href="../index.html">Home</a></li>
-                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Events</li>
+                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Agenda</li>
                 </ul>
             </div>
         </div>
     </section>
     <!-- //breadcrumb -->
 
-    <section class="details">
+    <div class="event-schedule-area-two bg-color pad100">
         <div class="container">
+            <div class="row mt-5 mb-5">
+                <div class="col-lg-12 mt-5">
+                    <div class="section-title text-center">
+                        <div class="title-text">
+                            <h2>Agenda</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col end-->
+            </div>
+            <!-- row end-->
             <div class="row">
-                <div class="col-md-8 mt-5">
-                    <div class="event mt-5">
-                        <h1 class="pb-5">Lorem Ipsum Dolor Sit Amet</h1>
-                        <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.</p>
-
-                        
-                        <p class="mt-5 mb-5">
-                               <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-style" data-toggle="modal" data-target="#rsvpModal">
-                          RSVP for this Event
-                        </button>
-                        <button type="button" class="btn btn-style" data-toggle="modal" data-target="#shareModal">
-                          Share this event &nbsp; <i class="fa fa-share"></i>
-                        </button>
-
-                        </p>
-
-                        <h3 class="pt-5 pb-4 mt-5">About this event</h3>
-
-                        <p> 
-                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.</p>
-
-                        <p class="mb-5"> 
-                            Dolores debitis excepturi maxime earum sapiente totam, quos dolore inventore tempore illum. Dolores explicabo sed amet aut atque, facere aliquid repudiandae quod possimus quo hic similique et voluptates fugit iure dolore quam ipsa numquam assumenda corporis? Dignissimos expedita fugit sapiente.
-                        </p>
-
+                <div class="col-lg-12 mb-5">
+                    <div class="tab-content mb-5" id="myTabContent">
+                        <div class="tab-pane fade active show" id="home" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th scope="col">Event Name</th>
+                                            <th scope="col">Activity</th> 
+                                            <th scope="col">Time</th> 
+                                            <th class="text-center" scope="col">Date</th>
+                                            <th class="text-center" scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr class="inner-box">
+                                            <td><h3>1</h3></td>
+                                            <td>
+                                                <h4>Lorem ipsum dolor sit amet </h4>
+                                            </td>
+                                            <td>
+                                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                                            </td><th scope="row">
+                                                <div class="event-date">
+                                                    <span>12:00</span>
+                                                    <p>AM</p>
+                                                </div>
+                                            </th>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>16</span>
+                                                    <p>Novembar</p>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <div class="primary-btn">
+                                                    <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Edit</a>
+                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="inner-box">
+                                            <td><h3>1</h3></td>
+                                            <td>
+                                                <h4>Lorem ipsum dolor sit amet</h4>
+                                            </td>
+                                            <td>
+                                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                                            </td><th scope="row">
+                                                <div class="event-date">
+                                                    <span>12:00</span>
+                                                    <p>AM</p>
+                                                </div>
+                                            </th>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>16</span>
+                                                    <p>Novembar</p>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <div class="primary-btn">
+                                                    <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Edit</a>
+                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="inner-box">
+                                            <td><h3>1</h3></td>
+                                            <td>
+                                                <h4>Lorem ipsum dolor sit amet</h4>
+                                            </td>
+                                            <td>
+                                                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                                            </td><th scope="row">
+                                                <div class="event-date">
+                                                    <span>12:00</span>
+                                                    <p>AM</p>
+                                                </div>
+                                            </th>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>16</span>
+                                                    <p>Novembar</p>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <div class="primary-btn">
+                                                    <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Edit</a>
+                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Delete</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="event-time">
-                        <h3 class="pt-5 pb-4 mt-5">Event Organisers</h3>
-                        
-                    </div>
-                </div>
+                <!-- /col end-->
             </div>
+            <!-- /row end-->
         </div>
-    </section>
+    </div>
+
+          <!--    edit agenda -->
+          <div class="modal fade" id="editAgenda" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Edit Agenda</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="#" method="post">
+                    <div class="form-group">
+                      <label for="event_name" class="col-form-label">Event Name:</label>
+                      <input type="text" name="event_name" class="form-control" value="Lorem ipsum dolor sit amet" disabled required>
+                    </div>
+                    <div class="form-group">
+                        <label for="activity" class="col-form-label">Activity:</label>
+                        <textarea class="form-control" id="about_me" name="about_me" rows="4" cols="50"></textarea>
+                      </div>
+                    <div class="form-group">
+                      <label for="evnet_time" class="col-form-label">Time:</label>
+                      <input type="time" name="event_time" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="event_date" class="col-form-label">Date:</label>
+                      <input type="date" name="event_date" class="form-control" required>
+                    </div>
+                      <button type="submit" name="submit" class="btn btn-style">Edit Agenda</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--    delete agenda -->
+          <div class="modal fade" id="deleteAgenda" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Delete Agenda</h5><br>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+               
+                <div class="modal-body">
+                    <p class="mb-3">Are you sure you want to delete this agenda?</p>
+                  <form action="#" method="post">
+                        <!-- Enter delete action -->
+                      <button type="submit" name="submit" class="btn btn-style-red">Delete Agenda</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
    
-
-        <!--    rsvp -->
-        <div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">RSVP for this event</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form action="#" method="post">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">First Name:</label>
-                    <input type="text" name="first_name" class="form-control"`required>
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Last Name:</label>
-                    <input type="text" name="last_name" class="form-control"`required>
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Email:</label>
-                    <input type="email" name="email" class="form-control"`required>
-                  </div>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Contact:</label>
-                    <input type="number" name="contact" min="650000000" max="699999999" class="form-control"`required>
-                  </div>
-                    <button type="submit" name="submit" class="btn btn-style">Confirm RSVP</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-                <!--    rsvp -->
-        <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Invite friends for this event</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form action="#" method="post">
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Email: </label>
-                    <input type="text" name="first_name" class="form-control" required>
-                  </div>
-                  <div class="form-group" hidden>
-                    <label for="event_url" class="col-form-label">Event Url:</label>
-                    <input type="text" name="event_url" class="form-control">
-                  </div>
-                <div class="form-group" hidden>
-                    <label class="required-field" for="event_details">Event Details</label>
-                    <textarea class="form-control" id="event_details" name="event_details" rows="4" placeholder="Event Details"></textarea>
-                </div>
-                <button type="submit" name="submit" class="btn btn-style">Send Invitation</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
 
     <!-- footer -->
     <footer class="bt_footer">
@@ -326,7 +377,7 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../assets/js/jquery-3.7.0.slim.js"></script> -->
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
     <!-- bootstrap -->
@@ -372,3 +423,4 @@
 </body>
 
 </html>
+
