@@ -31,32 +31,30 @@ $(document).ready(function () {
     
     function populateFields(data) {
         for (let i = 0; i < data.length; i++) {
-            // var newDiv = document.createElement('div');
+            // var newDiv = document.querySelector()
             // newDiv.textContent = 'Div ' + i;
             // document.body.appendChild(newDiv);
             var item = `
                 <div class="col-lg-4 col-md-6 mb-2-6">
                     <article class="card card-style2">
-                        <a href="details.html" class="read-more">
+                        <a href="details.html?id=${data[i].id}" class="read-more">
                             <div class="card-img">
                                 <img class="rounded-top" src="../assets/images/event1.jpg" alt="...">
                                 <div class="date"><span>24</span>JUNE</div>
                             </div>
                             <div class="card-body">
-                                <h3 class="h3"><a href="details.html">Lorem ipsum dolor sit amet</a></h3>
-                                <p class="display-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua... </p><br>
-                                <a class="event-link" href="details.html">Read More</a>                        
+                                <h3 class="h3"><a href="details.html">${data[i].name}</a></h3>
+                                <p class="display-30">${data[i].description} </p><br>
+                                <a class="event-link" href="details.html?id=${data[i].id}">Read More</a>                        
                             </div>
                         </a>
                     </article>
                 </div>
-            `
-            console.log(i);
+            `;
+
+            $(".event_list").append(item);
+            console.log(data[i]);
           }
     }
 
 });
-
-
-

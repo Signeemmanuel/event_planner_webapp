@@ -5,6 +5,7 @@ $(document).ready(function () {
     if(token) {
         window.location.href = "../user/login.html";
     }
+
     else {
         console.log(token);
     }
