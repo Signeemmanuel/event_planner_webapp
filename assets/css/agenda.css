@@ -1,3 +1,10 @@
+p{
+    color: #1a1a1a ;
+    font-size: 20px;
+}
+.modal-title {
+    color: #1a1a1a;
+}
 .event-schedule-area .tab-area .nav-tabs {
     border-bottom: inherit;
 }
