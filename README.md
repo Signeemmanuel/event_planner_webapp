@@ -15,7 +15,7 @@ To run this project,
 - And finally run "py manage.py migrate" This will create tables in the database with respect to the entities stated in the models.py file.
 
 #How to run frontend
-- Simply double click on th index.html file
+- Simply double click on th index.html file which takes you to your browser
 
 #How to use it
 - On the homepage, click on the button get started and you shall be taken to the registration page where you can register.
