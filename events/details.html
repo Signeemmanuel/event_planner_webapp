@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/event.css">
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
     <script src="../authentication.js"></script>
+    <script src="details.js"></script>
 </head>
 
 <body>
@@ -123,9 +124,9 @@
             <div class="row">
                 <div class="col-md-8 mt-5">
                     <div class="event mt-5">
-                        <h1 class="pb-5">Lorem Ipsum Dolor Sit Amet</h1>
-                        <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.</p>
+                        <h1 class="pb-5" id="event-name"></h1>
+                        <!-- <p class="mt-4">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.</p> -->
 
                         
                         <p class="mt-5 mb-5">
@@ -168,18 +169,14 @@
 
                         <h3 class="pt-5 pb-4 mt-5">About this event</h3>
 
-                        <p> 
-                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.</p>
-
-                        <p class="mb-5"> 
-                            Dolores debitis excepturi maxime earum sapiente totam, quos dolore inventore tempore illum. Dolores explicabo sed amet aut atque, facere aliquid repudiandae quod possimus quo hic similique et voluptates fugit iure dolore quam ipsa numquam assumenda corporis? Dignissimos expedita fugit sapiente.
-                        </p>
+                        <p id="event_details"></p>
 
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="event-time">
                         <h4 class="pt-5 pb-4 mt-5">Event Organisers</h4>
+                        <h5 class="mt-5 mb-1" id="organiser"></h5>
                         <h5 class="mt-5 mb-1">EVENA</h5>
                         <p class="mt-1 mb-5">We are developers who work on everything we can</p>
                         <a href="#" class="btn btn-style">View Profile</a>
@@ -355,14 +352,6 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script type="text/javascript">
-        var token = localStorage.getItem('token');
-        if(token) {
-            document.getElementById("rsvpLoggedIn").style.display = "block";
-
-        }
-    </script>
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
     <!-- bootstrap -->
