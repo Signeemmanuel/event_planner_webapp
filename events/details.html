@@ -51,19 +51,16 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link" href="index.html">Dashboard</a>
                         </li>
                         <li class="nav-item active">
                             <div class="dropdown">
-                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
+                                  <a class="nav-link active dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="events.html" class="dropdown-item" type="button">All Events</a>
                                     <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
-                                    <a href="myevents.html" class="dropdown-item" type="button">My Events</a>
-                                    <a href="budget.html" class="dropdown-item" type="button">Budgets</a>
-                                    <a href="agenda.html" class="dropdown-item" type="button">Agenda</a>
                                     <a href="create.html" class="dropdown-item" type="button">Create Events</a>
                                   </div>
                                 </div>
@@ -77,9 +74,8 @@
                                     Account <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="../user/index.html" class="dropdown-item" type="button">Dashboard</a>
                                     <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
-                                    <a id="logout-btn" class="dropdown-item" type="button">Logout</a>
+                                    <a id="logout-btn" onclick="logout()" class="dropdown-item" type="button">Logout</a>
                                   </div>
                                 </div>
                         </li>
@@ -123,13 +119,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mt-5">
-                    <div class="event mt-5">
+                    <div class="event mt-5 mb-5">
                         <h1 class="pb-5" id="event-name"></h1>
-                        <!-- <p class="mt-4">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.</p> -->
+                         <p><i class="fa fa-clock"></i> Time : </p>
+                         <p><i class="fa fa-map-marker"></i> Location : </p>
+                         <h3 class="pt-5 pb-4 mt-5">About this event</h3>
+
+                        <p id="event_details"></p>
 
                         
                         <p class="mt-5 mb-5">
+
 
                         <div class="rsvpLoggedIn mb-4" style="display:none">
                             <form action="#" method="post">
@@ -163,23 +163,25 @@
                         </button>
 
 
-                      
-
                         </p>
 
-                        <h3 class="pt-5 pb-4 mt-5">About this event</h3>
-
-                        <p id="event_details"></p>
+                         <h3 class="pt-5 pb-4 mt-5">Event Agenda</h3>
+                       
 
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="event-time">
                         <h4 class="pt-5 pb-4 mt-5">Event Organisers</h4>
-                        <h5 class="mt-5 mb-1" id="organiser"></h5>
-                        <h5 class="mt-5 mb-1">EVENA</h5>
-                        <p class="mt-1 mb-5">We are developers who work on everything we can</p>
-                        <a href="#" class="btn btn-style">View Profile</a>
+                        <hp>Master Organisation Sarl</hp>
+                    </div>
+                    <div class="event-time">
+                        <h4 class="pt-5 pb-4 mt-5">Event Budget</h4>
+                        <h3>00</h3>
+                    </div>
+                    <div class="event-time mb-5">
+                        <h4 class="pt-5 pb-4 mt-5">Actions</h4>
+                        <a href="#" class="btn btn-style" data-toggle="modal" data-target="#editEvent">Edit this Event</a>
                     </div>
                 </div>
             </div>
@@ -247,6 +249,46 @@
                     <textarea class="form-control" id="event_details" name="event_details" rows="4" placeholder="Event Details"></textarea>
                 </div>
                 <button type="submit" name="submit" class="btn btn-style">Send Invitation</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      <!--    edit event -->
+        <div class="modal fade" id="editEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <label for="event_name" class="col-form-label">Event Name:</label>
+                    <input type="text" name="event_name" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="event_size" class="col-form-label">Event Location:</label>
+                    <input type="text" name="event_size" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="budget" class="col-form-label">Budget:</label>
+                    <input type="text" name="budget" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="event_location" class="col-form-label">Event Time:</label>
+                    <input type="text" name="event_location" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="details" class="col-form-label">Event Details:</label>
+                    <textarea class="form-control" id="details" name="details" rows="4" cols="50"></textarea>
+                  </div>
+                    <button type="submit" name="submit" class="btn btn-style">Edit Event</button>
                 </form>
               </div>
             </div>

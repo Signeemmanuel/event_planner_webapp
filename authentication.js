@@ -1,11 +1,14 @@
 var token = localStorage.getItem('token');
-// var userID = localStorage.getItem('userID');
 
-console.log(token, !token);
-if (token == 'null'  || !token) {
-    window.location.href = "../user/login.html";
+if (!token) {
+    window.location.href = "../user/index.html";
 }
-
 else {
     console.log(token, !token);
+}
+
+function logout() {
+  localStorage.removeItem("token");
+  console.log("You are Logged Out!");
+  window.location.href = "../user/index.html";
 }

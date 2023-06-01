@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Evena | Home</title>
+    <title>Evena | Login</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
-    <script src="../authentication.js"></script>
+    <script src="../redirect.js"></script>
+    <script src="login.js"></script>
 </head>
 
 <body>
@@ -16,7 +18,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg stroke px-0">
                 <h1>
-                    <a class="navbar-brand" href="../index.html">
+                    <a class="navbar-brand" href="index.html">
                        EVE<span>NA</span>
                     </a>
                 </h1>
@@ -33,19 +35,7 @@
                             <a class="nav-link" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <div class="dropdown">
-                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Events <i class="fa fa-caret-down"></i>
-                                  </a>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="../events/index.html" class="dropdown-item" type="button">All Events</a>
-                                    <a href="../events/myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
-                                    <a href="../events/myevents.html" class="dropdown-item" type="button">My Events</a>
-                                    <a href="../events/budget.html" class="dropdown-item" type="button">Budgets</a>
-                                    <a href="../events/agenda.html" class="dropdown-item" type="button">Agenda</a>
-                                    <a href="../events/create.html" class="dropdown-item" type="button">Create Events</a>
-                                  </div>
-                                </div>
+                            <a class="nav-link" href="../events/events.html">Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="../contact.html">Contact</a>
@@ -56,13 +46,11 @@
                                     Account <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">Dashboard</a>
-                                    <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
-                                    <a href="#" class="dropdown-item" type="button">Logout</a>
+                                    <a href="index.html" class="dropdown-item" type="button">Login</a>
+                                    <a href="register.html" class="dropdown-item" type="button">Register</a>
                                   </div>
                                 </div>
                         </li>
-                        
                     </ul>
                 </div>
                 
@@ -86,24 +74,52 @@
     </header>
     <!--//header-->
 
-    <!-- breadcrumb -->
+        <!-- breadcrumb -->
     <section class="inner-banner py-5">
         <div class="tea-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="inner-text-title font-weight-bold pt-5">Welcome</h4>
+                <h4 class="inner-text-title font-weight-bold pt-5">Login</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="../index.html">Home</a></li>
-                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Dashboard</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Login</li>
                 </ul>
             </div>
         </div>
     </section>
     <!-- //breadcrumb -->
 
-    <div style="margin: 150px 0;font-size: 40px;text-align: center;">
-        <h1>My Dashboard</h1>
-    </div>
-   
+    <section class="container forms pt-50 pb-50 d-flex justify-content-center">
+            <div class="form login">
+                <div class="form-content">
+                    <header>LOGIN</header>
+                    <p class="text-center">Access your account</p>
+                    <div id="error" class="alert alert-danger" style="display: none;">Username or Password incorrect</div>
+                    <form id="login-form">
+
+                        <div class="field input-field">
+                            <input type="text" name="username" placeholder="Username" class="input" required>
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" name="password" placeholder="Password" class="password" required>
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="form-link">
+                            <a href="reset.html" class="forgot-pass">Forgot password?</a>
+                        </div>
+
+                        <div class="field button-field">
+                            <button type="submit" name="submit">Login</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="register.html" class="link signup-link">Register</a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- footer -->
     <footer class="bt_footer">
@@ -115,37 +131,37 @@
                             <div class="col-md-3 col-6 ftl">
                                 <ul>
                                     <h6 class="ft_title">Events</h6>
-                                    <li><a href="index.html">Upcoming Events</a></li>
-                                    <li><a href="index.html">Plan Events</a></li>
-                                    <li><a href="index.html">Event Stats</a></li>
-                                    <li><a href="index.html">All Events</a></li>
+                                    <li><a href="#">Upcoming Events</a></li>
+                                    <li><a href="#">Plan Events</a></li>
+                                    <li><a href="#">Event Stats</a></li>
+                                    <li><a href="#">All Events</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3 col-6 ftl">
                                 <ul>
                                     <h6 class="ft_title">Quick Links</h6>
-                                    <li><a href="../user/login.html">Login</a></li>
-                                    <li><a href="../user/register.html">Register</a></li>
+                                    <li><a href="user/login.html">Login</a></li>
+                                    <li><a href="user/register.html">Register</a></li>
                                     <li><a href="#">Check In</a></li>
-                                    <li><a href="index.html">RSVP</a></li>
+                                    <li><a href="events/index.html">RSVP</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3 col-6 ftl mt-md-0 mt-4">
                                 <ul>
                                     <h6 class="ft_title">Company</h6>
-                                    <li><a href="../company/about.html">About Us</a></li>
-                                    <li><a href="../company/services.html">Services</a></li>
-                                    <li><a href="../company/team.html">Team</a></li>
-                                    <li><a href="../company/projects.html">Projects</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Projects</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3 col-6 ftl mt-md-0 mt-4">
                                 <h6 class="ft_title">Support</h6>
                                 <ul>
-                                    <li><a href="../contact.html">Contact Us</a></li>
-                                    <li><a href="../faq.html">Faq's</a></li>
-                                    <li><a href="../company/privacy.html">Privacy Policy</a></li>
-                                    <li><a href="../company/terms.html"> Terms of Service</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="#">Faq's</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#"> Terms of Service</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -204,25 +220,6 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <script>        
-        function myFunction() {
-          document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-          if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-              }
-            }
-          }
-        }
-    </script>
-
     <!-- theme switch js (light and dark)-->
     <script src="../assets/js/theme-change.js"></script>
     <!-- bootstrap -->

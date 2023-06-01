@@ -56,17 +56,17 @@
   color: #111;
 }
 
-header-component .nav-item a{
+ .nav-item a{
   font-weight: 700 !important;
 }
 
-header-component .nav-item a:hover{
+ .nav-item a:hover{
   color:#006e99 !important;
 }
-header-component .nav-item.login a:hover{
+ .nav-item.login a:hover{
   color:#fff !important;
 }
-header-component .nav-item.login{
+ .nav-item.login{
   background: #006e99;
   color: #fff !important;
   padding: 1px 35px !important;
