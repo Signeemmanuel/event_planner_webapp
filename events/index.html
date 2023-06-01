@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Evena | Events</title>
-    <!-- <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css"> -->
+    <title>Evena | Dashboard</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/event.css">
+    <link rel="stylesheet" href="../assets/css/agenda.css">
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
     <script src="../authentication.js"></script>
-    <script src="index.js"></script>
 </head>
 
 <body>
@@ -33,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link active" href="index.html">Dashboard</a>
                         </li>
                         <li class="nav-item active">
                             <div class="dropdown">
@@ -41,11 +40,8 @@
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="events.html" class="dropdown-item" type="button">All Events</a>
                                     <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
-                                    <a href="myevents.html" class="dropdown-item" type="button">My Events</a>
-                                    <a href="budget.html" class="dropdown-item" type="button">Budgets</a>
-                                    <a href="agenda.html" class="dropdown-item" type="button">Agenda</a>
                                     <a href="create.html" class="dropdown-item" type="button">Create Events</a>
                                   </div>
                                 </div>
@@ -59,9 +55,8 @@
                                     Account <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="../user/index.html" class="dropdown-item" type="button">Dashboard</a>
                                     <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
-                                    <a id="logout-btn" class="dropdown-item" type="button">Logout</a>
+                                    <a id="logout-btn" onclick="logout()" class="dropdown-item" type="button">Logout</a>
                                   </div>
                                 </div>
                         </li>
@@ -91,29 +86,135 @@
     <section class="inner-banner py-5">
         <div class="tea-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="inner-text-title font-weight-bold pt-5">All Events </h4>
+                <h4 class="white inner-text-title font-weight-bold pt-5">Dashboard</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="../index.html">Home</a></li>
-                    <li class="active"><i class="fas fa-angle-right mx-2"></i>All Events </li>
+                    <li class="white"><a href="../index.html">Home</a></li>
+                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Dashboard</li>
                 </ul>
             </div>
         </div>
     </section>
+            <div class="col-12  mt-5 mb-5" style="text-align:right">
+                <a href="create.html" class="btn-style"><i class="fa fa-plus"></i> Create New Event</a>
+            </div>
     <!-- //breadcrumb -->
 
+   <div class="event-schedule-area-two bg-color pad100">
+        <div class="container">
+            <div class="row mt-5 mb-5">
+                <div class="col-lg-12 mt-5">
+                    <div class="section-title text-center">
+                        <div class="title-text">
+                            <h2>My Events</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col end-->
+            </div>
+            <!-- row end-->
+            <div class="row">
+                <div class="col-lg-12 mb-5">
+                    <div class="tab-content mb-5" id="myTabContent">
+                        <div class="tab-pane fade active show" id="home" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <thead>
+                                              <th class="text-center">
+                                                No
+                                              </th>
+                                              <th>Event Name</th>
+                                              <th>Event Date</th>
+                                              <th>RSVP spots</th>
+                                              <th>Budget</th>
+                                              <th>Agenda</th>
+                                              <th>Event Report</th>
+                                              <th>Action</th>
+                                        </thead>
+                                        <tr>
+                                              <td class="p-0 text-center">
+                                                1
+                                              </td>
+                                              <td>Event Name</td>
+                                              <td>01 Jan 2023</td>
+                                              <td class="text-center">
+                                                <span style="font-size:25px">00</span> <br> <a href="rsvp.html" class="color font-weight-bold">View RSVPs</a>
+                                              </td>
+                                              <td>
+                                                <span style="font-size:25px">00</span>
+                                              </td>
+                                              <td>
+                                                <a href="agenda.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="agenda"><i class="fas fa-calendar"> View Agenda</i></a></td>
+                                                  
+                                              <td>
+                                                <a href="report.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Report</i></a></td>                                  
+                                              <td>
+                                                <a href="details.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Event</i></a>
+                                                </td>
+                                                
+                                        </tr>
+
+                                        <tr>
+                                              <td class="p-0 text-center">
+                                                2
+                                              </td>
+                                              <td>Event Name</td>
+                                              <td>01 Jan 2023</td>
+                                              <td class="text-center">
+                                                <span style="font-size:25px">00</span> <br> <a href="rsvp.html" class="color font-weight-bold">View RSVPs</a>
+                                              </td>
+                                              <td>
+                                                <span style="font-size:25px">00</span>
+                                              </td>
+                                              <td>
+                                                <a href="agenda.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="agenda"><i class="fas fa-calendar"> View Agenda</i></a></td>
+                                                  
+                                              <td>
+                                                <a href="report.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Report</i></a></td>
+                                                  
+                                              <td>
+                                                <a href="details.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Event</i></a></td>
+                                                
+                                        </tr>
+
+                                        <tr>
+                                              <td class="p-0 text-center">
+                                                3
+                                              </td>
+                                              <td>Event Name</td>
+                                              <td>01 Jan 2023</td>
+                                              <td class="text-center">
+                                                <span style="font-size:25px">00</span> <br> <a href="rsvp.html" class="color font-weight-bold">View RSVPs</a>
+                                              </td>
+                                              <td>
+                                                <span style="font-size:25px">00</span>
+                                              </td>
+                                              <td>
+                                                <a href="agenda.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="agenda"><i class="fas fa-calendar"> View Agenda</i></a></td>
+                                                  
+                                              <td>
+                                                <a href="report.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Report</i></a></td>
+                                                  
+                                              <td>
+                                                <a href="details.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Event</i></a></td>
+                                                
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     
 
-<section>
-<div class="container events">
-    <div class="text-center mb-5">
-        <h5 class=" h1 font-weight-bold">Upcoming Events</h5>
-    </div>
-
-    <div class="row event_list" ></div>
-
-</div>
-</section>
    
+
+
 
     <!-- footer -->
     <footer class="bt_footer">

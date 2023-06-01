@@ -6,6 +6,7 @@
     <title>Evena | My RSVP</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/agenda.css">
     <link rel="stylesheet" href="../assets/css/event.css">
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
     <script src="../authentication.js"></script>
@@ -33,22 +34,20 @@
                     <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                 </button>
 
+                
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link" href="index.html">Dashboard</a>
                         </li>
                         <li class="nav-item active">
                             <div class="dropdown">
-                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
+                                  <a class="nav-link active dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="events.html" class="dropdown-item" type="button">All Events</a>
                                     <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
-                                    <a href="myevents.html" class="dropdown-item" type="button">My Events</a>
-                                    <a href="budget.html" class="dropdown-item" type="button">Budgets</a>
-                                    <a href="agenda.html" class="dropdown-item" type="button">Agenda</a>
                                     <a href="create.html" class="dropdown-item" type="button">Create Events</a>
                                   </div>
                                 </div>
@@ -62,9 +61,8 @@
                                     Account <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="../user/index.html" class="dropdown-item" type="button">Dashboard</a>
                                     <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
-                                    <a id="logout-btn" class="dropdown-item" type="button">Logout</a>
+                                    <a id="logout-btn" onclick="logout()" class="dropdown-item" type="button">Logout</a>
                                   </div>
                                 </div>
                         </li>
@@ -104,59 +102,141 @@
     </section>
     <!-- //breadcrumb -->
 
+    <div class="event-schedule-area-two bg-color pad100">
+        <div class="container">
+            <div class="row mt-5 mb-5">
+                <div class="col-lg-12 mt-5">
+                    <div class="section-title text-center">
+                        <div class="title-text">
+                            <h2>My RSVP</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col end-->
+            </div>
+            <!-- row end-->
+            <div class="row">
+                <div class="col-lg-12 mb-5">
+                    <div class="tab-content mb-5" id="myTabContent">
+                        <div class="tab-pane fade active show" id="home" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th scope="col">Event Name</th> 
+                                            <th class="text-center" scope="col">Date</th>
+                                            <th scope="col">Time</th> 
+                                            <th class="text-center" scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr class="inner-box">
+                                            <td><p>1</p></td>
+                                            <td>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </td>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>16</span>
+                                                    <p>Novembar</p>
+                                                </div>
+                                            </th>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>12:00</span>
+                                                    <p>AM</p>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <div class="primary-btn">
+                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#cancelRSVP" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Cancel RSVP</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="inner-box">
+                                            <td><p>2</p></td>
+                                            <td>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </td>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>16</span>
+                                                    <p>Novembar</p>
+                                                </div>
+                                            </th>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>12:00</span>
+                                                    <p>AM</p>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <div class="primary-btn">
+                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#cancelRSVP" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Cancel RSVP</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="inner-box">
+                                            <td><p>3</p></td>
+                                            <td>
+                                                <p>Lorem ipsum dolor sit amet</p>
+                                            </td>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>16</span>
+                                                    <p>Novembar</p>
+                                                </div>
+                                            </th>
+                                            <th scope="row">
+                                                <div class="event-date">
+                                                    <span>12:00</span>
+                                                    <p>AM</p>
+                                                </div>
+                                            </th>
+                                            <td>
+                                                <div class="primary-btn">
+                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#cancelRSVP" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Cancel RSVP</a>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-    <div class="container">
-        <div class="col-md-12 col-12 col-sm-12 mt-5 mb-5">
-            <h1 class="text-center mb-5">My RSVP</h1>
-            <div class="card mt-5">
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <tbody><tr>
-                      <th class="text-center">
-                        No
-                      </th>
-                      <th>Event Name</th>
-                      <th>Event Date</th>
-                      <th>Action</th>
-                    </tr>
-                    <tr>
-                          <td class="p-0 text-center">
-                            1
-                          </td>
-                          <td>Event Name</td>
-                          <td>01 Jan 2023</td>
-                          <td>
-                            <a class="red"  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-times"> Cancel RSVP</i></a>
-                          </td>
-                    </tr>
-                    <tr>
-                          <td class="p-0 text-center">
-                            2
-                          </td>
-                          <td>Event Name</td>
-                          <td>01 Jan 2023</td>
-                          <td>
-                            <a class="red"  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-times"> Cancel RSVP</i></a>
-                          </td>
-                    </tr>
-                    <tr>
-                          <td class="p-0 text-center">
-                            3
-                          </td>
-                          <td>Event Name</td>
-                          <td>01 Jan 2023</td>
-                          <td>
-                            <a class="red"  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-times"> Cancel RSVP</i></a>
-                          </td>
-                    </tr>
-                  </tbody>
-                </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /col end-->
+            </div>
+            <!-- /row end-->
+        </div>
+    </div>
+
+          <!--    delete agenda -->
+          <div class="modal fade" id="cancelRSVP" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Cancel RSVP</h5><br>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+               
+                <div class="modal-body">
+                    <p class="mb-3">Are you sure you want to cancel your RSVP for this event?</p>
+                  <form action="#" method="post">
+                        <!-- Enter delete action -->
+                      <button data-dismiss="modal" class="btn btn-style">No</button>
+                      <button type="submit" name="submit" class="btn btn-style-red">Yes, Cancel</button>
+                  </form>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+   
 
     <!-- footer -->
     <footer class="bt_footer">

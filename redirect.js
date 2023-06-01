@@ -1,6 +1,7 @@
 var token = localStorage.getItem('token');
     
-if(token != 'null' && token) { 
-    window.location.href = 'index.html';
+if (token) {
+    window.location.href = "../events/index.html";
+}else {
+    console.log("you are not authenticated")
 }
-

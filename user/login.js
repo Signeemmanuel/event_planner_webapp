@@ -5,9 +5,6 @@ $(document).ready(function () {
     if(!token) {
         console.log("you are not authenticated")
     }
-    else {
-        console.log(token);
-    }
     $("#login-form").submit(function (e) { 
         e.preventDefault();
         var formData = {

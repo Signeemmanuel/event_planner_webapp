@@ -32,22 +32,17 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link" href="index.html">Dashboard</a>
                         </li>
                         <li class="nav-item active">
                             <div class="dropdown">
-                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
+                                  <a class="nav-link active dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="events.html" class="dropdown-item" type="button">All Events</a>
                                     <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
-                                    <a href="myevents.html" class="dropdown-item" type="button">My Events</a>
-                                    <a href="budget.html" class="dropdown-item" type="button">Budgets</a>
-                                    <a href="agenda.html" class="dropdown-item" type="button">Agenda</a>
-                                    <a href="create.html" class="dropdown-item" type="button">Create Events</a>                                   <a href="myevents.html" class="dropdown-item" type="button">My Events</a>
-
-
+                                    <a href="create.html" class="dropdown-item" type="button">Create Events</a>
                                   </div>
                                 </div>
                         </li>
@@ -60,9 +55,8 @@
                                     Account <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="../user/index.html" class="dropdown-item" type="button">Dashboard</a>
                                     <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
-                                    <a id="logout-btn" class="dropdown-item" type="button">Logout</a>
+                                    <a id="logout-btn" onclick="logout()" class="dropdown-item" type="button">Logout</a>
                                   </div>
                                 </div>
                         </li>
@@ -132,6 +126,12 @@
                                 <input type="tel" class="form-control" id="event_location" name="event_location" placeholder="Event Location">
                             </div>
                         </div>    
+                        <div class="col-sm-6 mb-3">
+                            <div class="form-group">
+                                <label class="required-field" for="firstName">Budget</label>
+                                <input type="number" class="form-control" id="budget" name="budget" placeholder="Budget">
+                            </div>
+                        </div>
                         <div class="col-sm-6 mb-3">
                             <div class="form-group">
                                 <label for="event_date">Event Date</label>

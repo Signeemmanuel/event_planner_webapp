@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Evena | My Events</title>
+    <title>Evena | Event Report</title>
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/event.css">
@@ -28,22 +28,20 @@
                     <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                 </button>
 
+                
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link" href="index.html">Dashboard</a>
                         </li>
                         <li class="nav-item active">
                             <div class="dropdown">
-                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
+                                  <a class="nav-link active dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
                                     Events <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="index.html" class="dropdown-item" type="button">All Events</a>
+                                    <a href="events.html" class="dropdown-item" type="button">All Events</a>
                                     <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
-                                    <a href="myevents.html" class="dropdown-item" type="button">My Events</a>
-                                    <a href="budget.html" class="dropdown-item" type="button">Budgets</a>
-                                    <a href="agenda.html" class="dropdown-item" type="button">Agenda</a>
                                     <a href="create.html" class="dropdown-item" type="button">Create Events</a>
                                   </div>
                                 </div>
@@ -57,9 +55,8 @@
                                     Account <i class="fa fa-caret-down"></i>
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <a href="../user/index.html" class="dropdown-item" type="button">Dashboard</a>
                                     <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
-                                    <a id="logout-btn" class="dropdown-item" type="button">Logout</a>
+                                    <a id="logout-btn" onclick="logout()" class="dropdown-item" type="button">Logout</a>
                                   </div>
                                 </div>
                         </li>
@@ -89,10 +86,10 @@
     <section class="inner-banner py-5">
         <div class="tea-breadcrumb py-lg-5">
             <div class="container pt-4 pb-sm-4">
-                <h4 class="white inner-text-title font-weight-bold pt-5">My Events</h4>
+                <h4 class="white inner-text-title font-weight-bold pt-5">Event Report</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li class="white"><a href="../index.html">Home</a></li>
-                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>My Events</li>
+                    <li class="white active"><i class="white fas fa-angle-right mx-2"></i>Event Report</li>
                 </ul>
             </div>
         </div>
@@ -102,65 +99,37 @@
 
         <div class="container">
         <div class="col-md-12 col-12 col-sm-12 mt-5 mb-5">
-                <h1 class="text-center mb-5 table_head">My Events</h1>
+                <h1 class="text-center mb-5"> Event Report for {{EVENT NAME}}</h1>
             <div class="card mt-5">
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped">
-                    <tbody><tr>
-                      <th class="text-center">
-                        No
-                      </th>
+                    <tbody>
+                    <tr>
                       <th>Event Name</th>
-                      <th>RSVP spots</th>
-                      <th>Due Date</th>
-                      <th>Action</th>
-                      <th>Details</th>
+                        <td>Lorem ipsum dolor sit amet</td>
                     </tr>
                     <tr>
-                          <td class="p-0 text-center">
-                            1
-                          </td>
-                          <td>Event Name</td>
-                          <td class="">
-                            00
-                          </td>
-                          <td>01 Jan 2023</td>
-                          <td>
-                            <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
-                          </td>
-                          <td>
-                            <a href="eventreport.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-file"> View Event Report</i></a></td>
+                      <th>Event Details</th>
+                        <td>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</td>
                     </tr>
                     <tr>
-                          <td class="p-0 text-center">
-                            2
-                          </td>
-                          <td>Event Name</td>
-                          <td class="">
-                            00
-                          </td>
-                          <td>01 Jan 2023</td>
-                          <td>
-                            <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
-                          </td>
-                          <td>
-                            <a href="eventreport.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-file"> View Event Report</i></a></td>
+                      <th>Event Date</th>
+                        <td>Lorem ipsum dolor sit amet</td>
                     </tr>
                     <tr>
-                          <td class="p-0 text-center">
-                            3
-                          </td>
-                          <td>Event Name</td>
-                          <td class="">
-                            00
-                          </td>
-                          <td>01 Jan 2023</td>
-                          <td>
-                            <a  data-toggle="modal" data-target="#editProfModal" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pencil-alt"> Edit Event</i></a>
-                          </td>
-                          <td>
-                            <a href="eventreport.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-file"> View Event Report</i></a></td>
+                      <th>Event Time</th>
+                        <td>12:00 AM</td>
+                    </tr>
+                    <tr>
+                      <th>Event Budget</th>
+                        <td>00</td>
+                    </tr>
+                    <tr>
+                      <th>Event Participants</th>
+                        <td>Lorem ipsum dolor sit amet</td>
                     </tr>
                   </tbody>
                 </table>
@@ -171,7 +140,7 @@
         </div>
    
 
-      <!--    edit profile -->
+      <!--    edit details -->
         <div class="modal fade" id="editProfModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
