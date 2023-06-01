@@ -1,4 +1,4 @@
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import viewsets
 from rest_framework.authtoken.serializers import AuthTokenSerializer
@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password
 from .models import *
 from .serializers import *
+from .permissions import IsHost
 
 
 @api_view(['POST'])
@@ -61,9 +62,14 @@ def register_view(request):
 
     
 class EventViewSet(viewsets.ModelViewSet):
-    queryset = Event.objects.all()
     serializer_class = EventSerializer
+    permission_classes = [IsHost&IsAuthenticated]
     
+    def get_queryset(self):
+        user = self.request.user
+        queryset = Event.objects.filter(user=user)
+        return queryset
+        
     
 class AgendaViewSet(viewsets.ModelViewSet):
     queryset = Agenda.objects.all()

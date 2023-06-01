@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/agenda.css">
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
     <script src="../authentication.js"></script>
+    <script src="./index.js"></script>
 </head>
 
 <body>
@@ -117,20 +118,20 @@
                     <div class="tab-content mb-5" id="myTabContent">
                         <div class="tab-pane fade active show" id="home" role="tabpanel">
                             <div class="table-responsive">
-                                <table class="table">
-                                    <tbody>
-                                        <thead>
-                                              <th class="text-center">
-                                                No
-                                              </th>
-                                              <th>Event Name</th>
-                                              <th>Event Date</th>
-                                              <th>RSVP spots</th>
-                                              <th>Budget</th>
-                                              <th>Agenda</th>
-                                              <th>Event Report</th>
-                                              <th>Action</th>
-                                        </thead>
+                                <table class="table">                                    
+                                    <thead>
+                                        <th class="text-center">
+                                            No
+                                        </th>
+                                        <th>Event Name</th>
+                                        <th>Event Date</th>
+                                        <th>RSVP spots</th>
+                                        <th>Budget</th>
+                                        <th>Agenda</th>
+                                        <th>Event Report</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody id="event_list">    
                                         <tr>
                                               <td class="p-0 text-center">
                                                 1
@@ -154,52 +155,6 @@
                                                 
                                         </tr>
 
-                                        <tr>
-                                              <td class="p-0 text-center">
-                                                2
-                                              </td>
-                                              <td>Event Name</td>
-                                              <td>01 Jan 2023</td>
-                                              <td class="text-center">
-                                                <span style="font-size:25px">00</span> <br> <a href="rsvp.html" class="color font-weight-bold">View RSVPs</a>
-                                              </td>
-                                              <td>
-                                                <span style="font-size:25px">00</span>
-                                              </td>
-                                              <td>
-                                                <a href="agenda.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="agenda"><i class="fas fa-calendar"> View Agenda</i></a></td>
-                                                  
-                                              <td>
-                                                <a href="report.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Report</i></a></td>
-                                                  
-                                              <td>
-                                                <a href="details.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Event</i></a></td>
-                                                
-                                        </tr>
-
-                                        <tr>
-                                              <td class="p-0 text-center">
-                                                3
-                                              </td>
-                                              <td>Event Name</td>
-                                              <td>01 Jan 2023</td>
-                                              <td class="text-center">
-                                                <span style="font-size:25px">00</span> <br> <a href="rsvp.html" class="color font-weight-bold">View RSVPs</a>
-                                              </td>
-                                              <td>
-                                                <span style="font-size:25px">00</span>
-                                              </td>
-                                              <td>
-                                                <a href="agenda.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="agenda"><i class="fas fa-calendar"> View Agenda</i></a></td>
-                                                  
-                                              <td>
-                                                <a href="report.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Report</i></a></td>
-                                                  
-                                              <td>
-                                                <a href="details.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Event</i></a></td>
-                                                
-                                        </tr>
-                                    
                                     </tbody>
                                 </table>
                             </div>

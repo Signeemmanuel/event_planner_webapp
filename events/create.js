@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var token = localStorage.getItem('token');
     var userID = localStorage.getItem('userID');
+
     
     if(!token) {
         console.log("you are not authenticated")
@@ -17,7 +18,8 @@ $(document).ready(function () {
             date: $("input[name='event_date']").val(),
             location: $("input[name='event_location']").val(),
             description: $('#message').val(),
-            user_id: userID,
+            time: $('input[name="event_time"]').val(),
+            user: userID,
         };
         
         createEvent();

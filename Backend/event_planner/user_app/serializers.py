@@ -68,9 +68,16 @@ class ReportSerializer(serializers.ModelSerializer):
         
         
 class EventSerializer(serializers.ModelSerializer):
+    # user = UserSerializer(required=True)
+    user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
+    budget = BudgetSerializer(required=False)
+    agenda = AgendaSerializer(required=False)
+    report = ReportSerializer(required=False)
+
     class Meta:
         model = Event
         fields = "__all__"
+        
         
 
 class InvitationSerializer(serializers.ModelSerializer):
