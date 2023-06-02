@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'user_app',
+    'event_app',
 ]
 
 MIDDLEWARE = [

@@ -1,13 +1,13 @@
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework import viewsets
+from rest_framework import generics
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.auth import AuthToken
 from rest_framework.response import Response
 from django.contrib.auth.hashers import make_password
 from .models import *
 from .serializers import *
-from .permissions import IsHost
 
 
 @api_view(['POST'])
@@ -60,54 +60,3 @@ def register_view(request):
         'token': token
         })
 
-    
-class EventViewSet(viewsets.ModelViewSet):
-    serializer_class = EventSerializer
-    permission_classes = [IsHost&IsAuthenticated]
-    
-    def get_queryset(self):
-        user = self.request.user
-        queryset = Event.objects.filter(user=user)
-        return queryset
-        
-    
-class AgendaViewSet(viewsets.ModelViewSet):
-    queryset = Agenda.objects.all()
-    serializer_class = AgendaSerializer
-    
-    
-class BudgetViewSet(viewsets.ModelViewSet):
-    queryset = Budget.objects.all()
-    serializer_class = BudgetSerializer
-    
-    
-class GuestViewSet(viewsets.ModelViewSet):
-    permission_classes = []
-    queryset = Guest.objects.all()
-    serializer_class = GuestSerializer
-    
-    
-class ReportViewSet(viewsets.ModelViewSet):
-    queryset = Report.objects.all()
-    serializer_class = ReportSerializer
-    
-    
-class RSVPViewSet(viewsets.ModelViewSet):
-    queryset = RSVP.objects.all()
-    serializer_class = RSVPSerializer
-
-
-class InvitationViewSet(viewsets.ModelViewSet):
-    queryset = Invitation.objects.all()
-    serializer_class = InvitationSerializer
-    
-    def create(self, request):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        invitation = serializer.save()
-        
-        #Send email to invitated user
-        #send_invitation_email(invitation)  
-        
-        return Response(serializer.data, status=201)
-    
