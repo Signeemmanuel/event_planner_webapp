@@ -1,4 +1,3 @@
-
 var token = localStorage.getItem('token');
 var userID = localStorage.getItem('userID');
 
@@ -13,7 +12,7 @@ GetEvents();
 function GetEvents() {
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:8000/api/events/",
+        url: "http://127.0.0.1:8000/events/event/",
         dataType: 'json',
         headers: { 'Authorization': 'Token ' + token },
         success: function (data) {
@@ -30,7 +29,7 @@ function GetEvents() {
 }
 
 function populateFields(data) {
-    // let urlParams = new URLSearchParams()
+    let urlParams = new URLSearchParams()
 
     for (let i = 0; i < data.length; i++) {
         // var newDiv = document.querySelector()
@@ -38,7 +37,7 @@ function populateFields(data) {
         // document.body.appendChild(newDiv);
 
         // urlParams.set("id", data[i].id);
-        // let url = `details.html?${urlParams.toString()}`;
+        // let detailUrl = `details.html?${urlParams.toString()}`;
         // var item = `
         //         <div class="col-lg-4 col-md-6 mb-2-6 mt-5 mb-5">
         //             <article class="card card-style2">
@@ -62,24 +61,24 @@ function populateFields(data) {
         let item = `
         <tr>
             <td class="p-0 text-center">
-                ${i}
+                ${i + 1}
             </td>
             <td>${event_name}</td>
             <td>${event_date}</td>
             <td class="text-center">
-                <span style="font-size:25px">00</span> <br> <a href="rsvp.html" class="color font-weight-bold">View RSVPs</a>
+                <span style="font-size:25px">00</span> <br> <a href="rsvp.html?id=${data[i].id}" class="color font-weight-bold">View RSVPs</a>
             </td>
             <td>
                 <span style="font-size:25px">00</span>
             </td>
             <td>
-                <a href="agenda.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="agenda"><i class="fas fa-calendar"> View Agenda</i></a>
+                <a href="agenda.html?id=${data[i].id}"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="agenda"><i class="fas fa-calendar"> View Agenda</i></a>
             </td>                  
             <td>
-                <a href="report.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Report</i></a>
+                <a href="report.html?id=${data[i].id}"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Report</i></a>
             </td>                                  
             <td>
-                <a href="details.html"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Event</i></a>
+                <a href="details.html?id=${data[i].id}"  class="color mr-1" data-toggle="tooltip" title="" data-original-title="report"><i class="fas fa-calendar"> View Event</i></a>
             </td>                                                
         </tr>
         `

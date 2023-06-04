@@ -16,7 +16,7 @@ $(document).ready(function () {
         function login() {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:8000/api/login/",
+                url: "http://127.0.0.1:8000/users/login/",
                 data: formData,
                 success: function (response) {
                     localStorage.setItem('token', response.token);

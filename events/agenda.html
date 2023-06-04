@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/agenda.css">
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
     <script src="../authentication.js"></script>
+    <script src="./agenda.js"></script>
 </head>
 
 <body>
@@ -126,7 +127,7 @@
                                             <th class="text-center" scope="col">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="activities">
                                         
                                         <tr class="inner-box">
                                             <td><p>1</p></td>
@@ -152,53 +153,6 @@
                                             </td>
                                         </tr>
 
-                                        <tr class="inner-box">
-                                            <td><p>2</p></td>
-                                            <td>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                            </td><th scope="row">
-                                                <div class="event-date">
-                                                    <span>12:00</span>
-                                                    <p>AM</p>
-                                                </div>
-                                            </th>
-                                            <th scope="row">
-                                                <div class="event-date">
-                                                    <span>16</span>
-                                                    <p>Novembar</p>
-                                                </div>
-                                            </th>
-                                            <td>
-                                                <div class="primary-btn">
-                                                    <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Edit</a>
-                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr class="inner-box">
-                                            <td><p>3</p></td>
-                                            <td>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                            </td><th scope="row">
-                                                <div class="event-date">
-                                                    <span>12:00</span>
-                                                    <p>AM</p>
-                                                </div>
-                                            </th>
-                                            <th scope="row">
-                                                <div class="event-date">
-                                                    <span>16</span>
-                                                    <p>Novembar</p>
-                                                </div>
-                                            </th>
-                                            <td>
-                                                <div class="primary-btn">
-                                                    <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Edit</a>
-                                                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Delete</a>
-                                                </div>
-                                            </td>
-                                        </tr>
                                         
                                     </tbody>
                                 </table>
@@ -232,10 +186,10 @@
                       <label for="evnet_time" class="col-form-label">Time:</label>
                       <input type="time" name="event_time" class="form-control" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="event_date" class="col-form-label">Date:</label>
                       <input type="date" name="event_date" class="form-control" required>
-                    </div>
+                    </div> -->
                       <button type="submit" name="submit" class="btn btn-style">Add Activity</button>
                   </form>
                 </div>
@@ -263,10 +217,10 @@
                       <label for="evnet_time" class="col-form-label">Time:</label>
                       <input type="time" name="event_time" class="form-control" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="event_date" class="col-form-label">Date:</label>
                       <input type="date" name="event_date" class="form-control" required>
-                    </div>
+                    </div> -->
                       <button type="submit" name="submit" class="btn btn-style">Edit Agenda</button>
                   </form>
                 </div>

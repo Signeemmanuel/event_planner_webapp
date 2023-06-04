@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/event.css">
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
     <script src="../authentication.js"></script>
+    <script src="./report.js"></script>
 </head>
 
 <body>
@@ -18,7 +20,7 @@
             <nav class="navbar navbar-expand-lg stroke px-0">
                 <h1>
                     <a class="navbar-brand" href="../index.html">
-                       EVE<span>NA</span>
+                        EVE<span>NA</span>
                     </a>
                 </h1>
                 <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
@@ -28,7 +30,7 @@
                     <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                 </button>
 
-                
+
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
                         <li class="nav-item">
@@ -36,29 +38,31 @@
                         </li>
                         <li class="nav-item active">
                             <div class="dropdown">
-                                  <a class="nav-link active dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
+                                <a class="nav-link active dropdown-toggle" type="button" id="dropdownMenu2"
+                                    data-toggle="dropdown" aria-haspopup="true" arsia-expanded="false">
                                     Events <i class="fa fa-caret-down"></i>
-                                  </a>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <a href="events.html" class="dropdown-item" type="button">All Events</a>
                                     <a href="myrsvp.html" class="dropdown-item" type="button">My RSVP</a>
                                     <a href="create.html" class="dropdown-item" type="button">Create Events</a>
-                                  </div>
                                 </div>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
                             <div class="dropdown">
-                                  <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu2"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Account <i class="fa fa-caret-down"></i>
-                                  </a>
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <a href="../user/profile.html" class="dropdown-item" type="button">My Profile</a>
                                     <a id="logout-btn" onclick="logout()" class="dropdown-item" type="button">Logout</a>
-                                  </div>
                                 </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -97,83 +101,84 @@
     <!-- //breadcrumb -->
 
 
-        <div class="container">
+    <div class="container">
         <div class="col-md-12 col-12 col-sm-12 mt-5 mb-5">
-                <h1 class="text-center mb-5"> Event Report for {{EVENT NAME}}</h1>
+            <h1 class="text-center mb-5" id="report_headen"></h1>
             <div class="card mt-5">
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-striped">
-                    <tbody>
-                    <tr>
-                      <th>Event Name</th>
-                        <td>Lorem ipsum dolor sit amet</td>
-                    </tr>
-                    <tr>
-                      <th>Event Details</th>
-                        <td>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</td>
-                    </tr>
-                    <tr>
-                      <th>Event Date</th>
-                        <td>Lorem ipsum dolor sit amet</td>
-                    </tr>
-                    <tr>
-                      <th>Event Time</th>
-                        <td>12:00 AM</td>
-                    </tr>
-                    <tr>
-                      <th>Event Budget</th>
-                        <td>00</td>
-                    </tr>
-                    <tr>
-                      <th>Event Participants</th>
-                        <td>Lorem ipsum dolor sit amet</td>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-   
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody id="report_data">
+                                <tr>
+                                    <th>Event Name</th>
+                                    <td id="event_name"></td>
+                                </tr>
+                                <tr>
+                                    <th>Event Date</th>
+                                    <td id="event_date"></td>
+                                </tr>
+                                <tr>
+                                    <th>Event Time</th>
+                                    <td id="event_time"></td>
+                                </tr>
 
-      <!--    edit details -->
-        <div class="modal fade" id="editProfModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Edit Event</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form action="#" method="post">
-                  <div class="form-group">
-                    <label for="event_name" class="col-form-label">Event Name:</label>
-                    <input type="text" name="event_name" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="event_size" class="col-form-label">Event Size:</label>
-                    <input type="text" name="event_size" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="event_location" class="col-form-label">Event Location:</label>
-                    <input type="text" name="event_location" class="form-control" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="details" class="col-form-label">Event Details:</label>
-                    <textarea class="form-control" id="details" name="details" rows="4" cols="50"></textarea>
-                  </div>
-                    <button type="submit" name="submit" class="btn btn-style">Edit Event</button>
-                </form>
-              </div>
+                                <tr>
+                                    <th>Event Budget</th>
+                                    <td id="budget"></td>
+                                </tr>
+                                <tr>
+                                    <th>Event Participants</th>
+                                    <td id="attendance"></td>
+                                </tr>
+                                <tr>
+                                    <th>Summary</th>
+                                    <td id="summary"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+    </div>
+
+
+    <!--    edit details -->
+    <div class="modal fade" id="editProfModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Event</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="event_name" class="col-form-label">Event Name:</label>
+                            <input type="text" name="event_name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event_size" class="col-form-label">Event Size:</label>
+                            <input type="text" name="event_size" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event_location" class="col-form-label">Event Location:</label>
+                            <input type="text" name="event_location" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="details" class="col-form-label">Event Details:</label>
+                            <textarea class="form-control" id="details" name="details" rows="4" cols="50"></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-style">Edit Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- footer -->
@@ -233,13 +238,13 @@
                             <h6 class="ft_title-sm mt-4">Subscribe to our Newsletter</h6>
                             <form action="#" method="GET" class="subscribe-box ">
                                 <input type="search" placeholder="Enter Email" name="search" required="required"
-                                     class="search-popup">
+                                    class="search-popup">
                                 <button type="submit" class="btn subs-btn"><i class="fa fa-paper-plane"
                                         aria-hidden="true"></i></button>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-12"> 
+                    <div class="col-lg-12">
                         <p class="copyright mt-4">&copy; 2023 <span>EVENA</span>. All rights reserved. </p>
                     </div>
                 </div>

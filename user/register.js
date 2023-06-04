@@ -24,7 +24,7 @@ $(document).ready(function () {
         function register() {
             $.ajax({
                 type: "POST",
-                url: "http://127.0.0.1:8000/api/register/",
+                url: "http://127.0.0.1:8000/users/register/",
                 data: formData,
                 success: function (response) {
                     localStorage.setItem('token', response.token);

@@ -1,5 +1,5 @@
 from django.db import models
-from ..user_app.models import User
+from user_app.models import User
 
 class Event(models.Model):
     name = models.CharField(max_length=255, blank=False, null=False)
@@ -8,7 +8,7 @@ class Event(models.Model):
     location = models.CharField(max_length=255,blank=False, null=False)
     description = models.TextField()
     event_type = models.CharField(max_length=255, blank=True, null=True)
-    event = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
     
     def __str__(self):
         return self.name
@@ -34,12 +34,25 @@ class Guest(models.Model):
         return self.first_name + ' ' + self.last_name
     
     
+class RSVP(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, null=False, blank=False)
+    email = models.ForeignKey(Guest, on_delete=models.CASCADE, blank=False, null=False)
+    
+    def __str__(self):
+        return self.event_id + self.email
+    
 class Report(models.Model):
     attendance = models.IntegerField(default=0)
     total_cost = models.IntegerField(default=0)
-    summary = models.TextField()
+    summary = models.TextField(blank=True, null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE, null=False, blank=False)
 
+    def calculate_attendance(self):
+        return RSVP.objects.filter(event=self.event).count()
+    
+    def calculate_total_cost(self):
+        return Budget.objects.filter(event=self.event, item_paid=True).aggregate(sum("item_cost"))["item_cost__sum"] or 0
+        
 
 class Agenda(models.Model):
     activity_name = models.CharField(max_length=255, blank=False, null=False)
@@ -49,11 +62,4 @@ class Agenda(models.Model):
     def __str__(self):
         return self.activity_name
 
-
-class RSVP(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE, null=False, blank=False)
-    email = models.ForeignKey(Guest, on_delete=models.CASCADE, blank=False, null=False)
-    
-    def __str__(self):
-        return self.event_id + self.email
 

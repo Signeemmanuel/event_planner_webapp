@@ -10,32 +10,47 @@ from .permissions import IsHost
 
 class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
-    permission_classes = [IsHost&IsAuthenticated]
+    permission_classes = [IsHost, IsAuthenticated]
     
     def get_queryset(self):
         user = self.request.user
         queryset = Event.objects.filter(user=user)
         return queryset
-        
-    
-class AgendaDetails(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = AgendaSerializer
-    permission_classes = [IsHost, IsAuthenticated]
-    
-    def get_queryset(self):
-        event_id = self.kwargs["event_id"]
-        event = Event.objects.get(id=event_id)
-        return event.agenda
-  
-    
-class AgendaCreate(generics.CreateAPIView):
-    serializer_class = AgendaSerializer
     
     def perform_create(self, serializer):
-        event_id = self.request.data.get("event_id")
-        event = Event.objects.get(id=event_id)
-        serializer.save(event=event)
-  
+        serializer.save(user=self.request.user)
+        
+    
+class AgendaViewSet(viewsets.ModelViewSet):
+    queryset = Agenda.objects.all()
+    serializer_class = AgendaSerializer
+    # permission_classes = [IsHost, IsAuthenticated]
+    
+    # def get_queryset(self):
+    #     event_id = self.request.data.get("event")
+    #     queryset = Agenda.objects.filter(event=event_id)
+    #     return queryset
+    
+    # def perform_create(self, serializer):
+    #     serializer.save()        
+    
+# class AgendaDetailView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Agenda.objects.all()
+#     serializer_class = AgendaSerializer
+    
+    # def get_queryset(self):
+    #     event = self.request.data.get("event")
+    #     queryset = Agenda.objects.filter(event=event)
+    #     return queryset
+    
+# class AgendaCreate(generics.CreateAPIView):
+#     serializer_class = AgendaSerializer
+    
+#     def perform_create(self, serializer):
+#         event_id = self.request.data.get("event_id")
+#         event = Event.objects.get(id=event_id)
+#         serializer.save(event=event)
+     
     
 class BudgetViewSet(viewsets.ModelViewSet):
     queryset = Budget.objects.all()
@@ -51,7 +66,6 @@ class GuestViewSet(viewsets.ModelViewSet):
 class ReportViewSet(viewsets.ModelViewSet):
     queryset = Report.objects.all()
     serializer_class = ReportSerializer
-    
     
 class RSVPViewSet(viewsets.ModelViewSet):
     queryset = RSVP.objects.all()
