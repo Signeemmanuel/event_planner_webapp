@@ -16,8 +16,28 @@ let urlParams = new URLSearchParams(querySearch)
 let idParam = urlParams.get("id")
 console.log(idParam)
 
-GetEventsDetails(idParam);
-function GetEventsDetails(id) {
+
+GetEventName(idParam)
+function GetEventName(id) {
+    $.ajax({
+        type: "GET",
+        url: `http://127.0.0.1:8000/events/event/${idParam}/`,
+        dataType: 'json',
+        headers: { 'Authorization': 'Token ' + token },
+        success: function (data) {
+
+            console.log(data.name);
+            $("#title").text("Agenda for " + data.name)
+        },
+        error: function (error) {
+            console.log(console.error(error));
+        }
+    });
+}
+
+
+GetAgendaList(idParam);
+function GetAgendaList(id) {
     $.ajax({
         type: "GET",
         url: `http://127.0.0.1:8000/events/agenda/${idParam}/`,
@@ -37,35 +57,6 @@ function GetEventsDetails(id) {
 function populateFields(data) {
     console.log(data);
     
-    // $.map(data, function (data_i, index) {
-    //     $("#activities").append(`
-    //     <tr class="inner-box">
-    //         <td><p>${index}</p></td>
-    //         <td>
-    //             <p>${data_i.activity_name}</p>
-    //         </td><th scope="row">
-    //             <div class="event-date">
-    //                 <span>${data_i.time}</span>
-                    
-    //             </div>
-    //         </th>
-    //         <th scope="row">
-    //             <div class="event-date">
-    //                 <span>${data_i.date}</span>
-                
-    //             </div>
-    //         </th>
-    //         <td>
-    //             <div class="primary-btn">
-    //                 <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Edit</a>
-    //                 <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Delete</a>
-    //             </div>
-    //         </td>
-    //     </tr>
-    //     `)
-        
-    // });
-
     for (let i = 0; i < data.length; i++) {
         console.log(data[i]);
         console.log(data.activity_name);
@@ -80,16 +71,10 @@ function populateFields(data) {
                     
                 </div>
             </th>
-            <th scope="row">
-                <div class="event-date">
-                    <span>${data[i].date}</span>
-                
-                </div>
-            </th>
             <td>
                 <div class="primary-btn">
-                    <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Edit</a>
-                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit">Delete</a>
+                    <a class="btn btn-style mb-2" data-toggle="modal" data-target="#editAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit" id="edit_btn_${data[i].id}">Edit</a>
+                    <a class="btn btn-style-red mb-2" data-toggle="modal" data-target="#deleteAgenda" class=" mr-1" data-toggle="tooltip" title="" data-original-title="Edit" id="delete_btn_${data[i].id}">Delete</a>
                 </div>
             </td>
         </tr>
@@ -97,3 +82,4 @@ function populateFields(data) {
         $("#activities").append(item);
     }
 }
+

@@ -21,7 +21,7 @@ class EventSerializer(serializers.ModelSerializer):
 
 
 class AgendaSerializer(serializers.ModelSerializer):
-    event = EventSerializer()
+    event = serializers.PrimaryKeyRelatedField(queryset=Event.objects.all)
     
     class Meta:
         model = Agenda
